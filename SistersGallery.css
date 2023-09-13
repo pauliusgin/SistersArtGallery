@@ -110,7 +110,7 @@
     padding-bottom: max(1rem, 5vw);
   }
 
-  #gallery-title {
+  .gallery-title {
     font-size: 2.5rem;
   }
 
@@ -174,7 +174,7 @@
     z-index: 1;
   }
 
-  .div-language-change {
+  #div-language-change {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,6 +185,11 @@
     width: clamp(2rem, 4vw, 3rem);
     border-radius: 5px 5px 5px 5px;
     margin: 0;
+    box-shadow: 1px 1px 3px black;
+  }
+
+  .language-image:hover {
+    box-shadow: 1px 1px 6px black;
   }
 
   .ul-top {
@@ -294,10 +299,10 @@
 
 /* ---------- LANGUAGE CHANGE ------------- */
 
-/* .language-lithuanian {
-display: none;
-} */
+.language-lithuanian {
+  display: none;
+}
 
 .language-english {
-display: none; 
+  display: block; 
 }
