@@ -26,6 +26,7 @@
     margin: 0;
     margin-inline: auto;
     justify-content: center;
+    position: relative;
   }
 
   .section {
@@ -58,6 +59,10 @@
     display: block;
     padding-top: 10rem;
     padding-bottom: 10rem;
+  }
+
+  #gallery-section {
+    position: relative;
   }
 
   #div-gallery-items {
@@ -199,6 +204,11 @@
     gap: 1rem; 
   }
 
+  .open-button,
+  .close-button {
+    display: none;
+  }
+
   li {
     font-family: "Merienda", serif;
     font-weight: 400;
@@ -223,33 +233,40 @@
     border: 1px solid gainsboro;
     border-radius: 5px;
     box-shadow: 1px 1px 5px black;
+    transform: translateY(-2px);
+  }
+
+  li:active {
+    background-color: rgb(240, 248, 255, 0.5);
+    transform: translateY(1px);
+    box-shadow: 1px 1px 2px black;
   }
 
   /* ------------- GALLERY ------------------ */
 
-.gallery {
-  padding-top: 5rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 1rem;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+  .gallery {
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 
-.gallery-image {
-  width: 15rem;
-  border-radius: 10px;
-  box-shadow: 1px 1px 5px black;
-  transition: .3s;
+  .gallery-image {
+    width: 15rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    transition: .3s;
   }
   
   figcaption {
-  font-family: "Merienda", serif;
-  padding-top: 1em;
-  text-align: center;
+    font-family: "Merienda", serif;
+    padding-top: 1em;
+    text-align: center;
   }
   
   
@@ -283,16 +300,61 @@
  
   #whom-image,
   #idea-image {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (width <= 640px) {
-  .ul-top li:nth-child(2),
-  .ul-top li:nth-child(3),
-  .ul-top li:nth-child(4) {
+  .ul-top {
+    margin-top: 5px;
+    list-style-type: none;
+    gap: 1rem;
+    background-color: rgba(197, 184, 163, 0.5);
+    padding: 6px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 1px 3px 10px black;
+    display: none;  /* default state - off */
+  }
+  
+  .ul-top-visible {
+    display: block; /* turns on with js */
+  }
+
+  .open-button,
+  .close-button {
+    height: 100%;
+    width: 50px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgba(0, 0, 0, 0);
     display: none;
+    font-family: "Merienda", serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    transform: rotate(-90deg);
+    margin-right: 60px;
+  }
+
+  .open-button-visible,    /* default state - on */
+  .close-button-visible {  /* default state - off */
+    display: block;
+  }
+
+  .open-button:hover,
+  .close-button:hover {
+    border: 1px solid gainsboro;
+    border-radius: 5px;
+    box-shadow: -1px 1px 5px black;
+    transform: rotate(-90deg) translateX(2px);
+  }
+
+  .open-button:active,
+  .close-button:active {
+    background-color: rgb(240, 248, 255, 0.5);
+    transform: rotate(-90deg) translateY(1px);
+    box-shadow: -1px 1px 2px black;
   }
 }
 
