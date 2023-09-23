@@ -1,7 +1,7 @@
 // ------------------------------------------------------------------------------
 
 //* Language change
-
+// todo redo the whole logic here
 const languageEnglish = document.querySelectorAll('.language-english');
 const languageLithuanian = document.querySelectorAll('.language-lithuanian');
 const languageToggle = document.getElementById('div-language-change');
@@ -39,6 +39,8 @@ const openButton = document.querySelector(".open-button");
 const closeButton = document.querySelector(".close-button");
 const theMenu = document.querySelector(".ul-top");
 let timeoutId;
+let isTouchDevice = false; // we assume the initial device is not touch device
+
 
 // function to show the menu
 function showMenu() {
@@ -54,30 +56,56 @@ function hideMenu() {
     closeButton.classList.remove("close-button-visible"); // hides X
 }
 
-// shows the menu when hamburger is clicked 
+
+// shows the menu when hamburger is pressed 
+// when touch event is detected, prevents "click" from happening
+openButton.addEventListener("touchstart", function (event) {
+    isTouchDevice = true;
+    event.preventDefault();
+    isTouchDevice = false; // reset the flag
+    showMenu();
+});
+
+// if a click is detected, it opens a menu
 openButton.addEventListener("click", showMenu);
-openButton.addEventListener("touchstart", showMenu);
+
 
 // closes the menu when X is clicked
+// when touch event is detected, prevents "click" from happening
+closeButton.addEventListener("touchstart", function (event) {
+    isTouchDevice = true;
+    event.preventDefault();
+    isTouchDevice = false; // reset the flag
+    hideMenu();
+});
+
 closeButton.addEventListener("click", hideMenu);
-closeButton.addEventListener("touchstart", hideMenu);
+
 
 // close the menu when mouse pointer leaves the menu area
 theMenu.addEventListener("mouseleave", () => {
     timeoutId = setTimeout(hideMenu, 500);
 });
 
-// close the menu when mouse is clicked outside of button or menu area
+
+// close the menu when screen is touched outside of button or menu area
+// document.addEventListener("touchstart", (event) => {
+//     isTouchDevice = true;
+//     event.preventDefault();
+//     isTouchDevice = false;
+//     if (theMenu.classList.contains("ul-top-visible")) {
+//         hideMenu();
+//     }
+// });
+
+//close the menu when mouse is clicked outside of button or menu area
 document.addEventListener("click", (event) => {
     if (event.target !== openButton && event.target !== theMenu && event.target !== closeButton) { // TODO wondering about this line
         hideMenu();
     }
 });
 
-document.addEventListener("touchstart", (event) => {
-    if (event.target !== openButton && event.target !== theMenu && event.target !== closeButton) {
-        hideMenu();
-    }
-});
+
+
 
 // --------------------------------------------------------------------------
