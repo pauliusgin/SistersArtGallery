@@ -33,6 +33,7 @@ languageToggle.addEventListener('click', () => {
 
 // ------------------------------------------------------------------------------
 
+
 //* hamburger menu for smaller screens  
 
 const openButton = document.querySelector(".open-button");
