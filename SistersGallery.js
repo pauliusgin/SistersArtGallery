@@ -86,15 +86,38 @@ closeButton.addEventListener("click", hideMenu);
 
 // close the menu when mouse pointer leaves the menu area
 theMenu.addEventListener("mouseleave", () => {
-    timeoutId = setTimeout(hideMenu, 500);
-});
-
-//close the menu when mouse is clicked outside of button or menu area
-document.addEventListener("click", (event) => {
-    if (event.target !== theMenu && event.target !== closeButton) {
-        hideMenu();
+    let closeButtonDisplay = window.getComputedStyle(closeButton).display;
+    if (closeButtonDisplay === "block") {
+        timeoutId = setTimeout(hideMenu, 500);
     }
 });
+
+// hides the menu when any other element on the screen is clicked
+document.addEventListener("click", (event) => {
+    let closeButtonDisplay = window.getComputedStyle(closeButton).display;
+    if (closeButtonDisplay === "block" &&
+        event.target !== theMenu && 
+        event.target !== openButton && 
+        event.target !== closeButton) {
+        hideMenu();
+        }
+});
+
+// on screen resize, return the menu to regular appearance
+function backToNormal() {
+    let screenWidth = window.innerWidth;
+    if (screenWidth > 640) {
+        theMenu.style.display = "flex"; 
+        openButton.style.display = "none"; // hides hamburger
+        closeButton.style.display = "none"; // hides X
+    } else {
+        theMenu.style.display = "none";
+        openButton.style.display = "block";
+        closeButton.style.display = "none";
+    }
+}
+window.addEventListener("resize", backToNormal);
+backToNormal();
 
 
 // todo Wondering about this section below
