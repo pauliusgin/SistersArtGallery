@@ -22,33 +22,109 @@
   </head>
   <body>
     <div class="container">
-      <div class="section" id="nav-bar-section">
-        <div class="nav-top">
-          <button class="open-button" type="button">|||</button>
-          <button class="close-button" type="button">&#9932;</button>
-          <ul class="ul-top">
+      <div class="section" id="nav-bar">
+        <div class="nav-menu">
+          <button class="nav-button open-menu-button" type="button">
+            <img src="Images/hamburger-icon.png"
+                    alt="Hamburger menu icon"
+                    class="open-menu-button-image">
+          </button>
+          <button class="nav-button close-menu-button" type="button">&#9932;</button>
+          <ul class="ul-menu">
             <li class="language-english"><a href="#welcome-section" class="nav-link-top">Welcome</a></li>
-            <li class="language-lithuanian"><a href="#welcome-section" class="nav-link-top">Pagrindinis</a></li>
             <li class="language-english"><a href="#idea-section" class="nav-link-top">The Idea</a></li>
-            <li class="language-lithuanian"><a href="#idea-section" class="nav-link-top">Idėja</a></li>
             <li class="language-english"><a href="#whom-section" class="nav-link-top">For Whom?</a></li>
-            <li class="language-lithuanian"><a href="#whom-section" class="nav-link-top">Kam?</a></li>
             <li class="language-english"><a href="#about-section" class="nav-link-top">About</a></li>
-            <li class="language-lithuanian"><a href="#about-section" class="nav-link-top">Apie</a></li>
             <li class="language-english"><a href="#gallery-section" class="nav-link-top">The Gallery</a></li>
+            <li class="language-lithuanian"><a href="#welcome-section" class="nav-link-top">Pagrindinis</a></li>
+            <li class="language-lithuanian"><a href="#idea-section" class="nav-link-top">Idėja</a></li>
+            <li class="language-lithuanian"><a href="#whom-section" class="nav-link-top">Kam?</a></li>
+            <li class="language-lithuanian"><a href="#about-section" class="nav-link-top">Apie</a></li>
             <li class="language-lithuanian"><a href="#gallery-section" class="nav-link-top">Galerija</a></li>
           </ul>
         </div>
-        <!-- todo change this div below into a button -->
-          <div id="div-language-change">
-               <img src="images\LT-flag-web.jpeg"
-                    alt="LT flag"
-                    class="language-image language-english">
-               <img src="images\EN-flag-web.jpg"
-                    alt="EN flag"
-                    class="language-image language-lithuanian">
+        <div class="nav-controls">
+          <div class="controls-filter">
+            <button type="button" class="nav-button open-filter-button">
+              <img src="Images/filter-icon.png"
+                    alt="Filter icon"
+                    class="open-filter-button-image">
+            </button>
+            <button type="button" class="nav-button close-filter-button">&#9932;</button>
+            <div class="filter-label">
+              <label for="filter-options" class="filter-label language-english">Show only</label>
+              <label for="filter-options" class="filter-label language-lithuanian">Rodyti tik</label>
+            </div>
+            <div class="filter-options" name="filter-options">
+              <button class="filter-options-button language-english" type="button">Viltaute's</button>
+              <button class="filter-options-button language-english" type="button">Jogaile's</button>
+              <button class="filter-options-button language-english" type="button">Cardboard</button>
+              <button class="filter-options-button language-lithuanian" type="button">Viltautės</button>
+              <button class="filter-options-button language-lithuanian" type="button">Jogailės</button>
+              <button class="filter-options-button language-lithuanian" type="button">Kartoną</button>
+            </div>
           </div>
-          <!-- todo change this div above into a button -->
+          <div class="controls-sort">
+            <button type="button" class="nav-button open-sort-button">
+              <img src="Images/double-arrow-icon.png"
+                    alt="Double arrow icon"
+                    class="open-sorting-button-image">
+            </button>
+            <button type="button" class="nav-button close-sort-button">&#9932;</button>
+            <div class="sort-label">
+              <label for="select-options-EN" class="sort-label language-english">Sort by</label>
+              <label for="select-options-LT" class="sort-label language-lithuanian">Rūšiuoti pagal</label>
+            </div>
+            <div class="sort-options">
+              <select class="select-options language-english" id="select-options-EN" title="select">
+                <option class="language-english">(select one)</option>
+                <option class="language-english">Date - newest to oldest</option>
+                <option class="language-english">Date - oldest to newest</option>
+              </select>
+              <select class="select-options language-lithuanian" id="select-options-LT" title="select">
+                <option class="language-lithuanian">(pasirinkite vieną)</option>
+                <option class="language-lithuanian">Datą - nuo naujausių</option>
+                <option class="language-lithuanian">Datą - nuo seniausių</option>
+              </select>
+            </div>
+          </div>
+          <div class="controls-search">
+            <button class="nav-button open-search-button" type="button">
+              <img src="Images/magnifying-glass-icon-100px.png"
+                    alt="Magnifying glass icon"
+                    class="open-search-button-image">
+            </button>
+            <button class="nav-button close-search-button" type="button">&#9932;</button>
+            <div class="search-label">
+              <label for="search" class="search-label language-english">Search</label>
+              <label for="search" class="search-label language-lithuanian">Ieškoti</label>
+            </div>
+            <div class="search-options">
+              <div class="input-field">
+                <button id="input-button" type="button">
+                  <img src="Images/magnifying-glass-icon-50px.png"
+                    alt="Magnifying glass icon"
+                    class="input-button-image">
+                </button>
+                <input class="search-field language-english" type="search" placeholder="(enter keyword)" />
+                <input class="search-field language-lithuanian" type="search" placeholder="(įveskite žodį)" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="nav-language">
+          <button type="button" class="language-button language-english" id="LT-flag">
+            <img src="images\LT-flag-web.jpeg"
+                    alt="LT flag"
+                    class="language-image">
+          </button>
+          <button type="button" class="language-button language-lithuanian" id="EN-flag">
+            <img src="images\EN-flag-web.jpg"
+                    alt="EN flag"
+                    class="language-image">
+          </button>
+        </div>
+      </div>
       </div>
       <div class="section" id="welcome-section">
            <h1 class="language-english">Sisters' Art Gallery</h1>

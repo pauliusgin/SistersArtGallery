@@ -1,44 +1,42 @@
 // ------------------------------------------------------------------------------
 
-//* Language change
+//* Language change section
 
 const languageEnglish = document.querySelectorAll('.language-english');
 const languageLithuanian = document.querySelectorAll('.language-lithuanian');
-const languageToggle = document.getElementById('div-language-change');
+const languageButtonLT = document.getElementById('LT-flag');
+const languageButtonEN = document.getElementById('EN-flag');
 
-let isLanguageEnglishVisible = true; // Initial state - English
+function switchToLithuanian() {
+    languageEnglish.forEach(element => {
+        element.style.display = "none";
+    });
+    languageLithuanian.forEach(element => {
+        element.style.display = "block";
+    });
+} 
 
-languageToggle.addEventListener('click', () => {
-    if (isLanguageEnglishVisible) {
-        // Switch to Lithuanian
-        languageEnglish.forEach(element => {
-            element.style.display = 'none';
-        });
-        languageLithuanian.forEach(element => {
-            element.style.display = 'block';
-        });
-    } else {
-        // Switch to English
-        languageLithuanian.forEach(element => {
-            element.style.display = 'none';
-        });
-        languageEnglish.forEach(element => {
-            element.style.display = 'block';
-        });
-    }
+function switchToEnglish() {
+    languageEnglish.forEach(element => {
+        element.style.display = "block";
+    });
+    languageLithuanian.forEach(element => {
+        element.style.display = "none";
+    });
+}
 
-    // Toggle the state
-    isLanguageEnglishVisible = !isLanguageEnglishVisible;
-});
+languageButtonLT.addEventListener("click", switchToLithuanian);
+
+languageButtonEN.addEventListener("click", switchToEnglish);
+
 
 // ------------------------------------------------------------------------------
 
+//* hamburger menu section  
 
-//* hamburger menu for smaller screens  
-
-const openButton = document.querySelector(".open-button");
-const closeButton = document.querySelector(".close-button");
-const theMenu = document.querySelector(".ul-top");
+const openMenuButton = document.querySelector(".open-menu-button");
+const closeMenuButton = document.querySelector(".close-menu-button");
+const theMenu = document.querySelector(".ul-menu");
 let timeoutId;
 let isTouchDevice = false; // we assume the initial device is not a touch device
 
@@ -46,92 +44,358 @@ let isTouchDevice = false; // we assume the initial device is not a touch device
 // function to show the menu
 function showMenu() {
     theMenu.style.display = "block"; // opens menu
-    openButton.style.display = "none"; // hides hamburger
-    closeButton.style.display = "block"; // shows X
+    openMenuButton.style.display = "none"; // hides hamburger
+    closeMenuButton.style.display = "block"; // shows X
 }
 
 // function to hide the menu
 function hideMenu() {
     theMenu.style.display = "none"; // closes menu
-    openButton.style.display = "block"; // shows hamburger
-    closeButton.style.display = "none"; // hides X
+    openMenuButton.style.display = "block"; // shows hamburger
+    closeMenuButton.style.display = "none"; // hides X
 }
 
-
-// shows the menu when hamburger is pressed 
-// when touch event is detected, prevents "click" from happening
-openButton.addEventListener("touchstart", function (event) {
+// function to prevent "click" when "touch" event is detected
+function preventClick(event) {
     isTouchDevice = true;
     event.preventDefault();
-    isTouchDevice = false; // reset the flag
+    isTouchDevice = false;
+}
+
+// function to show the menu with a touch
+function showMenuWithTouch() {
+    preventClick();
     showMenu();
-});
+}
 
-// if a click is detected, it opens a menu
-openButton.addEventListener("click", showMenu);
-
-
-// closes the menu when X is touched
-// when touch event is detected, prevents "click" from happening
-closeButton.addEventListener("touchstart", function (event) {
-    isTouchDevice = true;
-    event.preventDefault();
-    isTouchDevice = false; // reset the flag
+// function to hide the menu with a touch
+function hideMenuWithTouch() {
+    preventClick();
     hideMenu();
-});
+}
 
-// closes the menu when X is clicked
-closeButton.addEventListener("click", hideMenu);
-
-
-// close the menu when mouse pointer leaves the menu area
-theMenu.addEventListener("mouseleave", () => {
-    let closeButtonDisplay = window.getComputedStyle(closeButton).display;
-    if (closeButtonDisplay === "block") {
+// function to hide the menu once the mouse pointer leaves the menu area
+ function hideMenuOnLeave(event) {
+    let closeMenuButtonDisplay = window.getComputedStyle(closeMenuButton).display;
+    if (closeMenuButtonDisplay === "block") {
         timeoutId = setTimeout(hideMenu, 500);
     }
-});
+ }
+ 
+ // function to detect if any element outside of the menu is clicked
+ function detectClickOutsideMenu(event) {
+     const closeMenuButtonDisplay = window.getComputedStyle(closeMenuButton).display;
+     return (closeMenuButtonDisplay === "block" &&
+     event.target !== theMenu && 
+     event.target !== openMenuButton && 
+     event.target !== closeMenuButton
+     );
+ }
+ 
+ // function to hide the menu when any other element on the screen is clicked
+ function hideMenuOnClickOutside(event) {
+     if (detectClickOutsideMenu(event)) {
+         hideMenu();
+     }
+ }
+ 
+ // function to return the menu to initial parameters on larger screens
+ function menuToNormal() {
+     let screenWidth = window.innerWidth;
+     theMenu.style.display = "flex"; 
+     openMenuButton.style.display = "none";
+     closeMenuButton.style.display = "none";
+     if (screenWidth < 850) {
+         theMenu.style.display = "none";
+         openMenuButton.style.display = "block";
+         closeMenuButton.style.display = "none";
+     }
+ }
+ 
+// shows the menu when hamburger is touched
+openMenuButton.addEventListener("touchstart", showMenuWithTouch);
 
+// shows the menu when hamburger is clicked
+openMenuButton.addEventListener("click", showMenu);
+
+// hides the menu when X is touched
+closeMenuButton.addEventListener("touchstart", hideMenuWithTouch);
+
+// hides the menu when X is clicked
+closeMenuButton.addEventListener("click", hideMenu);
+
+// hides menu when mouse pointer leaves the menu area
+theMenu.addEventListener("mouseleave", hideMenuOnLeave);
+    
 // hides the menu when any other element on the screen is clicked
-document.addEventListener("click", (event) => {
-    let closeButtonDisplay = window.getComputedStyle(closeButton).display;
-    if (closeButtonDisplay === "block" &&
-        event.target !== theMenu && 
-        event.target !== openButton && 
-        event.target !== closeButton) {
-        hideMenu();
-        }
-});
+document.addEventListener("click", hideMenuOnClickOutside);
 
-// on screen resize, return the menu to regular appearance
-function backToNormal() {
-    let screenWidth = window.innerWidth;
-    if (screenWidth > 640) {
-        theMenu.style.display = "flex"; 
-        openButton.style.display = "none"; // hides hamburger
-        closeButton.style.display = "none"; // hides X
-    } else {
-        theMenu.style.display = "none";
-        openButton.style.display = "block";
-        closeButton.style.display = "none";
-    }
-}
-window.addEventListener("resize", backToNormal);
-backToNormal();
-
-
-// todo Wondering about this section below
-// close the menu when screen is touched outside of button or menu area
-// document.addEventListener("touchstart", (event) => {
-//     isTouchDevice = true;
-//     event.preventDefault();
-//     isTouchDevice = false;
-//     if (event.target !== theMenu && event.target !== closeButton) {
-//         hideMenu();
-//     }
-// });
-// todo Wondering about this section above
+// tracks screen size and returns the menu to initial parameters
+window.addEventListener("resize", menuToNormal);
+menuToNormal();
+  
 
 // --------------------------------------------------------------------------
 
 
+//* gallery control menu section (sort, filter, search)
+
+const galleryControls = document.querySelector(".nav-controls");
+const gallerySection = document.querySelector("#gallery-section");
+
+// function to show gallery controls only when in gallery section of the page
+function showGalleryControls() {
+    let currentYPosition = window.scrollY;
+    const galleryTop = gallerySection.offsetTop;
+    const galleryBottom = galleryTop + gallerySection.offsetHeight;
+    galleryControls.style.display = "none";
+    if (currentYPosition + 1 >= galleryTop && currentYPosition <= galleryBottom) {
+        galleryControls.style.display = "flex";
+    }
+}
+
+
+// show gallery controls when in gallery section
+window.addEventListener("scroll", showGalleryControls);
+
+
+
+
+//* filter section 
+
+const openFilterButton = document.querySelector(".open-filter-button");
+const closeFilterButton = document.querySelector(".close-filter-button");
+const theFilter = document.querySelector(".filter-options");
+
+// function to show the filter
+function showFilter() {
+    theFilter.style.display = "flex"; // opens filter
+    openFilterButton.style.display = "none"; // hides triangle icon
+    closeFilterButton.style.display = "block"; // shows X
+}
+
+// function to hide the filter
+function hideFilter() {
+    theFilter.style.display = "none"; // closes filter
+    openFilterButton.style.display = "block"; // shows triangle icon
+    closeFilterButton.style.display = "none"; // hides X
+}
+
+// function to show the filter when triangle is touched 
+function showFilterWithTouch() {
+    preventClick();
+    showFilter;
+}
+
+// function to hide the filter when X is touched
+function hideFilterWithTouch() {
+    preventClick();
+    hideFilter();
+}
+
+// function to detect if any element outside of the filter is clicked
+function detectClickOutsideFilter(event) {
+    const closeFilterButtonDisplay = window.getComputedStyle(closeFilterButton).display;
+    return (closeFilterButtonDisplay === "block" &&
+    event.target !== theFilter && 
+    event.target !== openFilterButton && 
+    event.target !== closeFilterButton
+    );
+}
+
+// function to hide the filter when any other element on the screen is clicked
+function hideFilterOnClickOutside(event) {
+    if (detectClickOutsideFilter(event)) {
+        hideFilter();
+    }
+}
+
+// shows filter when triangle is touched
+openFilterButton.addEventListener("touchstart", showFilterWithTouch);
+
+// shows filter when triangle is clicked
+openFilterButton.addEventListener("click", showFilter);
+
+// hides the filter when X is touched 
+closeFilterButton.addEventListener("touchstart", hideFilterWithTouch);
+
+// hides the filter when X is clicked
+closeFilterButton.addEventListener("click", hideFilter);
+
+// hides the menu when any other element on the screen is clicked
+document.addEventListener("click", hideFilterOnClickOutside);
+
+
+//* sorting section
+
+const openSortingButton = document.querySelector(".open-sort-button");
+const closeSortingButton = document.querySelector(".close-sort-button");
+const theSorting = document.querySelector(".sort-options");
+const theSortingOptionsEN = document.getElementById("select-options-EN");
+const theSortingOptionsLT = document.getElementById("select-options-LT");
+
+// function to show sorting
+function showSorting() {
+    theSorting.style.display = "block";
+    openSortingButton.style.display = "none";
+    closeSortingButton.style.display = "block";
+}
+
+// function so hide sorting
+function hideSorting() {
+    theSorting.style.display = "none";
+    openSortingButton.style.display = "block";
+    closeSortingButton.style.display = "none";
+}
+
+// function to show sorting when arrow icon is touched
+function showSortingWithTouch() {
+    preventClick();
+    showSorting();
+}
+
+// function to hide sorting when X is touched
+function hideSortingWithTouch() {
+    preventClick();
+    hideSorting();
+} 
+
+// function to detect if any element outside of sorting is clicked
+function detectClickOutsideSorting(event) {
+    const closeSortingButtonDisplay = window.getComputedStyle(closeSortingButton).display;
+    return (closeSortingButtonDisplay === "block" &&
+    event.target !== theSorting && 
+    event.target !== theSortingOptionsEN &&
+    event.target !== theSortingOptionsLT &&
+    event.target !== openSortingButton && 
+    event.target !== closeSortingButton
+    );
+}
+
+// function to hide the sorting when any other element on the screen is clicked
+function hideSortingOnClickOutside(event) {
+    if (detectClickOutsideSorting(event)) {
+        hideSorting();
+    }
+}
+
+// shows sorting when arrow icon is touched
+openSortingButton.addEventListener("touchstart", showSortingWithTouch);
+
+// shows sorting when arrow icon is clicked
+openSortingButton.addEventListener("click", showSorting);
+
+// hides sorting when X is touched
+closeSortingButton.addEventListener("touchstart", hideSortingWithTouch);
+
+// closes the sorting selection when X button is pressed
+closeSortingButton.addEventListener("click", hideSorting);
+
+// hides the sorting when any other element on the screen is clicked
+document.addEventListener("click", hideSortingOnClickOutside);
+
+
+//* search field section
+
+const openSearchButton = document.querySelector(".open-search-button");
+const closeSearchButton = document.querySelector(".close-search-button");
+const theSearch = document.querySelector(".input-field");
+const theSearchInput = document.querySelector(".search-field");
+
+// function to show the search field
+function showSearch() {
+    theSearch.style.display = "flex";
+    openSearchButton.style.display = "none";
+    closeSearchButton.style.display = "block";
+}
+
+// function to hide the search field
+function hideSearch() {
+    theSearch.style.display = "none";
+    openSearchButton.style.display = "block";
+    closeSearchButton.style.display = "none";
+}
+
+// function to show the search once the magnifying glass is touched 
+function showSearchWithTouch() {
+    preventClick();
+    showSearch();
+}
+
+// function to hide the search once X is touched
+function hideSearchWithTouch() {
+    preventClick();
+    hideSearch();
+}
+
+// function to detect if any element outside of the search is clicked
+function detectClickOutsideSearch(event) {
+    const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
+    return (closeSearchButtonDisplay === "block" &&
+    event.target !== theSearch && 
+    event.target !== theSearchInput &&
+    event.target !== openSearchButton && 
+    event.target !== closeSearchButton
+    );
+}
+
+// function to hide the search when any other element on the screen is clicked
+function hideSearchOnClickOutside(event) {
+    if (detectClickOutsideSearch(event)) {
+        hideSearch();
+    }
+}
+
+// shows the search once the magnifying glass is touched
+openSearchButton.addEventListener("touchstart", showSearchWithTouch);
+
+// shows the search once the magnifying glass is clicked
+openSearchButton.addEventListener("click", showSearch);
+
+// closes the search field once the X button is touched
+closeSearchButton.addEventListener("touchstart", hideSearchWithTouch);
+
+// closes the search filed once the X button is pressed
+closeSearchButton.addEventListener("click", hideSearch);
+
+// hides the menu when any other element on the screen is clicked
+document.addEventListener("click", hideSearchOnClickOutside);
+
+
+//* gallery controls on window resize
+
+// function to return gallery controls to their initial parameters on screen resize
+function initialState() {
+    let screenWidth = window.innerWidth;
+    // filter
+    theFilter.style.display = "flex"; 
+    openFilterButton.style.display = "none"; // hides open button
+    closeFilterButton.style.display = "none"; // hides X
+    // sort
+    theSorting.style.display = "flex";
+    openSortingButton.style.display = "none";
+    closeSortingButton.style.display = "none";
+    // search
+    theSearch.style.display = "flex";
+    openSearchButton.style.display = "none";
+    closeSearchButton.style.display = "none";
+
+    if (screenWidth < 1300) {
+        // filter
+        theFilter.style.display = "none";
+        openFilterButton.style.display = "block";
+        closeFilterButton.style.display = "none";
+        //sort
+        theSorting.style.display = "none";
+        openSortingButton.style.display = "block";
+        closeSortingButton.style.display = "none";
+        // search
+        theSearch.style.display = "none";
+        openSearchButton.style.display = "block";
+        closeSearchButton.style.display = "none";
+    }
+}
+
+// tracks window size in real time and adjusts 
+window.addEventListener("resize", initialState);
+initialState();
