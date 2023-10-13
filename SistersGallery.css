@@ -272,40 +272,46 @@ figcaption {
       box-shadow: 1px 1px 2px black;
     }
 
-    .open-search-button {
-      font-size: 2rem;
-    }
-
-        .open-menu-button-image {
-          width: 80%;
-          height: 80%;
-          padding-top: 6px;
-          pointer-events: none;
+        .open-menu-button,
+        .close-menu-button {
+          margin-left: 1rem;
+          margin-right: 1rem;
         }
 
-        .open-filter-button-image {
-          width: 100%;
-          height: 80%;
-          border-radius: 5px;
-          padding-top: 6px;
-          pointer-events: none;
+        .open-search-button {
+          font-size: 2rem;
         }
 
-        .open-sorting-button-image {
-          width: 100%;
-          height: 50%;
-          border-radius: 5px;
-          transform: rotate(90deg);
-          pointer-events: none;
-        }
+            .open-menu-button-image {
+              width: 80%;
+              height: 80%;
+              padding-top: 6px;
+              pointer-events: none;
+            }
 
-        .open-search-button-image {
-          width: 80%;
-          height: 70%;
-          border-radius: 5px;
-          padding-top: 3px;
-          pointer-events: none;
-        }
+            .open-filter-button-image {
+              width: 100%;
+              height: 80%;
+              border-radius: 5px;
+              padding-top: 6px;
+              pointer-events: none;
+            }
+
+            .open-sorting-button-image {
+              width: 100%;
+              height: 50%;
+              border-radius: 5px;
+              transform: rotate(90deg);
+              pointer-events: none;
+            }
+
+            .open-search-button-image {
+              width: 80%;
+              height: 70%;
+              border-radius: 5px;
+              padding-top: 3px;
+              pointer-events: none;
+            }
     
 .nav-controls {
   display: none;
@@ -383,14 +389,14 @@ figcaption {
                   outline: none;
                 }
 
-            #input-button {
+            #search-field-button {
               border: none;
               border-radius: 5px;
               background-color: white;
               width: 20px;            
             }
 
-            .input-button-image {
+            .search-field-button-image {
               width: 100%;
               height: 80%;
               padding-top: 5px;
@@ -506,7 +512,7 @@ align-items: center;
         position: absolute;
         display: flex;
         flex-direction: column;
-        margin-left: 0;
+        margin-left: 2px;
         padding: 6px;
         width: 110px;
         background-color: var(--light-brown);

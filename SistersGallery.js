@@ -300,7 +300,9 @@ document.addEventListener("click", hideSortingOnClickOutside);
 const openSearchButton = document.querySelector(".open-search-button");
 const closeSearchButton = document.querySelector(".close-search-button");
 const theSearch = document.querySelector(".input-field");
-const theSearchInput = document.querySelector(".search-field");
+const theSearchInputEN = document.getElementById("search-field-EN");
+const theSearchInputLT = document.getElementById("search-field-LT");
+const theSearchInputButton = document.getElementById("search-field-button")
 
 // function to show the search field
 function showSearch() {
@@ -333,7 +335,9 @@ function detectClickOutsideSearch(event) {
     const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
     return (closeSearchButtonDisplay === "block" &&
     event.target !== theSearch && 
-    event.target !== theSearchInput &&
+    event.target !== theSearchInputEN &&
+    event.target !== theSearchInputLT &&
+    event.target !== theSearchInputButton &&
     event.target !== openSearchButton && 
     event.target !== closeSearchButton
     );
