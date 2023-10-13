@@ -331,17 +331,17 @@ function hideSearchWithTouch() {
 }
 
 // function to detect if any element outside of the search is clicked
-// function detectClickOutsideSearch(event) {
-//     const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
-//     return (closeSearchButtonDisplay === "block" &&
-//     event.target !== theSearch && 
-//     event.target !== theSearchInputEN &&
-//     event.target !== theSearchInputLT &&
-//     event.target !== theSearchInputButton &&
-//     event.target !== openSearchButton && 
-//     event.target !== closeSearchButton
-//     );
-// }
+function detectClickOutsideSearch(event) {
+    const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
+    return (closeSearchButtonDisplay === "block" &&
+    event.target !== theSearch && 
+    event.target !== theSearchInputEN &&
+    event.target !== theSearchInputLT &&
+    event.target !== theSearchInputButton &&
+    event.target !== openSearchButton && 
+    event.target !== closeSearchButton
+    );
+}
 
 // function to hide the search when any other element on the screen is clicked
 function hideSearchOnClickOutside(event) {
@@ -401,5 +401,5 @@ function initialState() {
 }
 
 // tracks window size in real time and adjusts 
-window.addEventListener("resize", initialState);
-initialState();
+// window.addEventListener("resize", initialState);
+// initialState();
