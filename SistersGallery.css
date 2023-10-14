@@ -481,7 +481,7 @@ align-items: center;
 
       .sort-options {
         position: absolute;
-        display: flex;
+        display: none;
         bottom: -37px;
         left: 0;
       }

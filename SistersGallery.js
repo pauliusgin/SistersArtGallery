@@ -401,5 +401,5 @@ function initialState() {
 }
 
 // tracks window size in real time and adjusts 
-// window.addEventListener("resize", initialState);
-// initialState();
+window.addEventListener("resize", initialState);
+initialState();
