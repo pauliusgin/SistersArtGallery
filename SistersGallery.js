@@ -370,6 +370,7 @@ document.addEventListener("click", hideSearchOnClickOutside);
 
 // function to return gallery controls to their initial parameters on screen resize
 function initialState() {
+    const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
     let screenWidth = window.innerWidth;
     // filter
     theFilter.style.display = "flex"; 
@@ -384,7 +385,7 @@ function initialState() {
     openSearchButton.style.display = "none";
     closeSearchButton.style.display = "none";
 
-    if (screenWidth < 1300) {
+    if (screenWidth < 1300 && closeSearchButtonDisplay !== "block") {
         // filter
         theFilter.style.display = "none";
         openFilterButton.style.display = "block";
@@ -395,7 +396,7 @@ function initialState() {
         closeSortingButton.style.display = "none";
         // search
         theSearch.style.display = "none";
-        openSearchButton.style.display = "block";
+        openSearchButton.style.display = "block"; 
         closeSearchButton.style.display = "none";
     }
 }
