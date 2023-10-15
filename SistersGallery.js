@@ -368,39 +368,65 @@ document.addEventListener("click", hideSearchOnClickOutside);
 
 //* gallery controls on window resize
 
-// function to return gallery controls to their initial parameters on screen resize
-function initialState() {
-    const closeSearchButtonDisplay = window.getComputedStyle(closeSearchButton).display;
+// function for filter to react to screen resize
+function filterOnScreenResize() {
     let screenWidth = window.innerWidth;
-    // filter
     theFilter.style.display = "flex"; 
     openFilterButton.style.display = "none"; // hides open button
     closeFilterButton.style.display = "none"; // hides X
-    // sort
-    theSorting.style.display = "flex";
-    openSortingButton.style.display = "none";
-    closeSortingButton.style.display = "none";
-    // search
-    theSearch.style.display = "flex";
-    openSearchButton.style.display = "none";
-    closeSearchButton.style.display = "none";
-
-    if (screenWidth < 1300 && closeSearchButtonDisplay !== "block") {
-        // filter
+    if (screenWidth < 1300) {
         theFilter.style.display = "none";
         openFilterButton.style.display = "block";
         closeFilterButton.style.display = "none";
-        //sort
-        theSorting.style.display = "none";
-        openSortingButton.style.display = "block";
-        closeSortingButton.style.display = "none";
-        // search
-        theSearch.style.display = "none";
-        openSearchButton.style.display = "block"; 
-        closeSearchButton.style.display = "none";
     }
 }
 
+// function for sorting to react to screen resize
+function sortingOnScreenResize() {
+    let screenWidth = window.innerWidth;
+    theSorting.style.display = "flex";
+    openSortingButton.style.display = "none";
+    closeSortingButton.style.display = "none";
+    if (screenWidth < 1300) {
+        theSorting.style.display = "none";
+        openSortingButton.style.display = "block";
+        closeSortingButton.style.display = "none";
+    }
+}
+
+// function for search to react to screen resize
+function searchOnScreenResize() {
+    let screenWidth = window.innerWidth;
+    theSearch.style.display = "flex";
+    openSearchButton.style.display = "none";
+    closeSearchButton.style.display = "none";
+    if (screenWidth < 1300 && !document.activeElement.classList.contains("search-field")) {
+        theSearch.style.display = "none";
+        openSearchButton.style.display = "block";
+        closeSearchButton.style.display = "none";
+    } else if (screenWidth < 1300 && document.activeElement.classList.contains("search-field")) {
+        theSearch.style.display = "flex";
+        openSearchButton.style.display = "none";
+        closeSearchButton.style.display = "block";
+    }
+}
+
+// function to do when search input field is in focus
+// function searchFieldActive() {
+//     if (document.activeElement.classList.contains("search-field")) {
+//         theSearch.style.display = "flex";
+//         openSearchButton.style.display = "none";
+//         closeSearchButton.style.display = "block";
+//     }
+// }
+
+// function to combine filter, sorting and search reactions into one
+function galleryControlsOnScreenResize() {
+    filterOnScreenResize();
+    sortingOnScreenResize();
+    searchOnScreenResize();
+}
+
 // tracks window size in real time and adjusts 
-window.addEventListener("resize", initialState);
-initialState();
+window.addEventListener("resize", galleryControlsOnScreenResize);
+galleryControlsOnScreenResize();
