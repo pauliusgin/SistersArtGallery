@@ -1,0 +1,80 @@
+[
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "Playing With Water",
+        "titleLT": "Žaidimas Su Vandeniu",
+        "typeEN": "painting",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "vandeniniai dažai",
+        "url": "gallery items/Gallery items drawings/Viltaute-01-Playing-With-Water-web.jpg",
+        "dateAdded": "2023-07-01"
+    },
+    {   
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "Wild Strawberries",
+        "titleLT": "Žemuogės",
+        "typeEN": "painting",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "vandeniniai dažai",
+        "url": "gallery items/Gallery items drawings/Viltaute-02-Wild-Strawberries-web.jpg",
+        "dateAdded": "2023-07-02"
+    },
+    {   
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "Sunny Day",
+        "titleLT": "Saulėta Diena",
+        "typeEN": "painting",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "vandeniniai dažai",
+        "url": "gallery items/Gallery items drawings/Viltaute-03-Sunny-Day-web.jpg",
+        "dateAdded": "2023-08-01"
+    },
+    {   
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "An Alpaca",
+        "titleLT": "Alpaka",
+        "typeEN": "painting",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "vandeniniai dažai",
+        "url": "gallery items/Gallery items drawings/Viltaute-04-An-Alpaca-web.jpg",
+        "dateAdded": "2023-07-01"
+    },
+    {
+        "authorEN": null,
+        "authorLT": null,
+        "age": null,
+        "titleEN": "Panda",
+        "titleLT": "Panda",
+        "typeEN": "cardboard",
+        "typeLT": "kartonas",
+        "methodEN": "gouache",
+        "methodLT": "guašas",
+        "url": "gallery items/Gallery items cardboard/Cardboard-01-Panda-web.jpg",
+        "dateAdded": "2023-07-01"
+    },
+    {
+        "authorEN": null,
+        "authorLT": null,
+        "age": null,
+        "titleEN": "Ostrich",
+        "titleLT": "Strutis",
+        "typeEN": "cardboard",
+        "typeLT": "kartonas",
+        "methodEN": "gouache",
+        "methodLT": "guašas",
+        "url": "gallery items/Gallery items cardboard/Cardboard-02-Ostrich-web.jpg",
+        "dateAdded": "2023-08-01"
+    }
+] 

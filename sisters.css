@@ -258,6 +258,7 @@ figcaption {
   background-color: rgba(0, 0, 0, 0);
   font-size: 1.5rem;
   transition: 0.1s;
+  cursor: pointer;
   display: none;
 }
 
@@ -554,10 +555,10 @@ align-items: center;
 
 /* ---------- LANGUAGE CHANGE ------------- */
 
-.language-lithuanian {
-display: none; /* initial state - invisible */
+[data-language="en"] {
+  display: block;
 }
 
-.language-english {
-display: block; 
+[data-language="lt"] {
+  display: none;
 }

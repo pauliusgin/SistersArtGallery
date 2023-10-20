@@ -2,33 +2,33 @@
 
 //* Language change section
 
-const languageEnglish = document.querySelectorAll('.language-english');
-const languageLithuanian = document.querySelectorAll('.language-lithuanian');
 const languageButtonLT = document.getElementById('LT-flag');
 const languageButtonEN = document.getElementById('EN-flag');
 
 function switchToLithuanian() {
-    languageEnglish.forEach(element => {
-        element.style.display = "none";
+    const language = document.querySelectorAll("[data-language]");
+    language.forEach(element => {
+        if (element.getAttribute("data-language") === "lt") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
     });
-    languageLithuanian.forEach(element => {
-        element.style.display = "block";
-    });
-} 
+}
 
 function switchToEnglish() {
-    languageEnglish.forEach(element => {
-        element.style.display = "block";
-    });
-    languageLithuanian.forEach(element => {
-        element.style.display = "none";
+    const language = document.querySelectorAll("[data-language]");
+    language.forEach(element => {
+        if (element.getAttribute("data-language") === "en") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
     });
 }
 
 languageButtonLT.addEventListener("click", switchToLithuanian);
-
 languageButtonEN.addEventListener("click", switchToEnglish);
-
 
 // ------------------------------------------------------------------------------
 
@@ -410,15 +410,6 @@ function searchOnScreenResize() {
         closeSearchButton.style.display = "block";
     }
 }
-
-// function to do when search input field is in focus
-// function searchFieldActive() {
-//     if (document.activeElement.classList.contains("search-field")) {
-//         theSearch.style.display = "flex";
-//         openSearchButton.style.display = "none";
-//         closeSearchButton.style.display = "block";
-//     }
-// }
 
 // function to combine filter, sorting and search reactions into one
 function galleryControlsOnScreenResize() {

@@ -12,7 +12,7 @@
       href="images/favicon.png">
     <link
       rel="stylesheet"
-      href="SistersGallery.css">
+      href="sisters.css">
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Great+Vibes">
@@ -31,16 +31,16 @@
           </button>
           <button class="nav-button close-menu-button" type="button">&#9932;</button>
           <ul class="ul-menu">
-            <li class="language-english"><a href="#welcome-section" class="nav-link-top">Welcome</a></li>
-            <li class="language-english"><a href="#idea-section" class="nav-link-top">The Idea</a></li>
-            <li class="language-english"><a href="#whom-section" class="nav-link-top">For Whom?</a></li>
-            <li class="language-english"><a href="#about-section" class="nav-link-top">About</a></li>
-            <li class="language-english"><a href="#gallery-section" class="nav-link-top">The Gallery</a></li>
-            <li class="language-lithuanian"><a href="#welcome-section" class="nav-link-top">Pagrindinis</a></li>
-            <li class="language-lithuanian"><a href="#idea-section" class="nav-link-top">Idėja</a></li>
-            <li class="language-lithuanian"><a href="#whom-section" class="nav-link-top">Kam?</a></li>
-            <li class="language-lithuanian"><a href="#about-section" class="nav-link-top">Apie</a></li>
-            <li class="language-lithuanian"><a href="#gallery-section" class="nav-link-top">Galerija</a></li>
+            <li data-language="en"><a href="#welcome-section" class="nav-link-top">Welcome</a></li>
+            <li data-language="en"><a href="#idea-section" class="nav-link-top">The Idea</a></li>
+            <li data-language="en"><a href="#whom-section" class="nav-link-top">For Whom?</a></li>
+            <li data-language="en"><a href="#about-section" class="nav-link-top">About</a></li>
+            <li data-language="en"><a href="#gallery-section" class="nav-link-top">The Gallery</a></li>
+            <li data-language="lt"><a href="#welcome-section" class="nav-link-top">Pagrindinis</a></li>
+            <li data-language="lt"><a href="#idea-section" class="nav-link-top">Idėja</a></li>
+            <li data-language="lt"><a href="#whom-section" class="nav-link-top">Kam?</a></li>
+            <li data-language="lt"><a href="#about-section" class="nav-link-top">Apie</a></li>
+            <li data-language="lt"><a href="#gallery-section" class="nav-link-top">Galerija</a></li>
           </ul>
         </div>
         <div class="nav-controls">
@@ -52,16 +52,16 @@
             </button>
             <button type="button" class="nav-button close-filter-button">&#9932;</button>
             <div class="filter-label">
-              <label for="filter-options" class="filter-label language-english">Show only</label>
-              <label for="filter-options" class="filter-label language-lithuanian">Rodyti tik</label>
+              <label for="filter-options" class="filter-label" data-language="en" >Show only</label>
+              <label for="filter-options" class="filter-label" data-language="lt" >Rodyti tik</label>
             </div>
             <div class="filter-options" name="filter-options">
-              <button class="filter-options-button language-english" type="button">Viltaute's</button>
-              <button class="filter-options-button language-english" type="button">Jogaile's</button>
-              <button class="filter-options-button language-english" type="button">Cardboard</button>
-              <button class="filter-options-button language-lithuanian" type="button">Viltautės</button>
-              <button class="filter-options-button language-lithuanian" type="button">Jogailės</button>
-              <button class="filter-options-button language-lithuanian" type="button">Kartoną</button>
+              <button class="filter-options-button" data-language="en"  type="button">Viltaute</button>
+              <button class="filter-options-button" data-language="en"  type="button">Jogaile</button>
+              <button class="filter-options-button" data-language="en"  type="button">Cardboard</button>
+              <button class="filter-options-button" data-language="lt"  type="button">Viltautė</button>
+              <button class="filter-options-button" data-language="lt"  type="button">Jogailė</button>
+              <button class="filter-options-button" data-language="lt"  type="button">Kartonas</button>
             </div>
           </div>
           <div class="controls-sort">
@@ -72,19 +72,19 @@
             </button>
             <button type="button" class="nav-button close-sort-button">&#9932;</button>
             <div class="sort-label">
-              <label for="select-options-EN" class="sort-label language-english">Sort by</label>
-              <label for="select-options-LT" class="sort-label language-lithuanian">Rūšiuoti pagal</label>
+              <label for="select-options-EN" class="sort-label" data-language="en" >Sort by</label>
+              <label for="select-options-LT" class="sort-label" data-language="lt" >Rūšiuoti pagal</label>
             </div>
             <div class="sort-options">
-              <select class="select-options language-english" id="select-options-EN" title="select">
-                <option class="language-english">(select one)</option>
-                <option class="language-english">Date - newest to oldest</option>
-                <option class="language-english">Date - oldest to newest</option>
+              <select class="select-options" data-language="en"  id="select-options-EN" title="select">
+                <option data-language="en">(select)</option>
+                <option data-language="en">Date - newest to oldest</option>
+                <option data-language="en">Date - oldest to newest</option>
               </select>
-              <select class="select-options language-lithuanian" id="select-options-LT" title="select">
-                <option class="language-lithuanian">(pasirinkite vieną)</option>
-                <option class="language-lithuanian">Datą - nuo naujausių</option>
-                <option class="language-lithuanian">Datą - nuo seniausių</option>
+              <select class="select-options" data-language="lt"  id="select-options-LT" title="select">
+                <option data-language="lt">(pasirinkite)</option>
+                <option data-language="lt">Data - pirma naujausi</option>
+                <option data-language="lt">Data - pirma seniausi</option>
               </select>
             </div>
           </div>
@@ -96,8 +96,8 @@
             </button>
             <button class="nav-button close-search-button" type="button">&#9932;</button>
             <div class="search-label">
-              <label for="search" class="search-label language-english">Search</label>
-              <label for="search" class="search-label language-lithuanian">Ieškoti</label>
+              <label for="search" class="search-label" data-language="en" >Search</label>
+              <label for="search" class="search-label" data-language="lt" >Ieškoti</label>
             </div>
             <div class="search-options">
               <div class="input-field">
@@ -106,19 +106,19 @@
                     alt="Magnifying glass icon"
                     class="search-field-button-image">
                 </button>
-                <input class="search-field language-english" id="search-field-EN" type="search" placeholder="(enter keyword)" />
-                <input class="search-field language-lithuanian" id="search-field-LT" type="search" placeholder="(įveskite žodį)" />
+                <input class="search-field" data-language="en"  id="search-field-EN" type="search" placeholder="search..." />
+                <input class="search-field" data-language="lt"  id="search-field-LT" type="search" placeholder="ieškokite..." />
               </div>
             </div>
           </div>
         </div>
         <div id="nav-language">
-          <button type="button" class="language-button language-english" id="LT-flag">
+          <button type="button" class="language-button" data-language="en"  id="LT-flag">
             <img src="images\LT-flag-web.jpeg"
                     alt="LT flag"
                     class="language-image">
           </button>
-          <button type="button" class="language-button language-lithuanian" id="EN-flag">
+          <button type="button" class="language-button" data-language="lt"  id="EN-flag">
             <img src="images\EN-flag-web.jpg"
                     alt="EN flag"
                     class="language-image">
@@ -126,16 +126,17 @@
         </div>
       </div>
       <div class="section" id="welcome-section">
-           <h1 class="language-english">Sisters' Art Gallery</h1>
-           <h1 class="language-lithuanian">Sesių Meno Galerija</h1>
-           <p class="text-under-logo language-english">
+           <h1 data-language="en">Sisters' Art Gallery</h1>
+           <h1 data-language="lt">Sesių Meno Galerija</h1>
+           <p class="text-under-logo" data-language="en" >
             Welcome to the wonderful world of artistic exploration, discovery and imagination!
             Pencils, crayons, brushes and fingers - we like using everything!
            </p>
-           <p class="text-under-logo language-lithuanian">
+           <p class="text-under-logo" data-language="lt" >
             Sveiki atvykę į nuostabų meninių tyrinėjimų, atradimų ir vaizduotės pasaulį!
             Pieštukai, kreidelės, teptukai ir pirštai - mums patinka naudotis viskuo!
            </p>
+           <!-- todo change the naming format such as below -->
            <div class="div-main-image">
             <img src="images\big-sister-2-web.jpg"
                   alt="Sisters"
@@ -144,13 +145,13 @@
       </div>
       <div class="section" id="idea-section">
         <div class="div-main-text">
-          <h2 class="language-english">Idea</h2>
-          <p class="language-english">
+          <h2 data-language="en">Idea</h2>
+          <p data-language="en">
             &emsp;&emsp;To make an online archive of at least some of our first fleeting artistic attempts and discoveries.
             So that even in a few years we could visit this gallery and remember how it all began.
           </p>
-          <h2 class="language-lithuanian">Idėja</h2>
-          <p class="language-lithuanian">
+          <h2 data-language="lt">Idėja</h2>
+          <p data-language="lt">
             &emsp;&emsp;Išsaugoti ateičiai tuos greit prapuolančius pirmuosius meninius bandymus ir atradimus.
             Kad net ir po kelerių metų galėtume apsilankyti šioje galerijoje ir prisiminti, nuo ko viskas prasidėjo.
              </p>
@@ -168,25 +169,25 @@
                id="whom-image">
         </div>
         <div class="div-main-text">
-          <h2 class="language-english">For Whom?</h2>
-          <p class="language-english">
+          <h2 data-language="en">For Whom?</h2>
+          <p data-language="en">
             &emsp;&emsp;Mostly for family and friends, scattered around the country and the world. Also for anyone interested in children's
             artistic experiments and lucky enough to happen to wander into our small corner of the internet.
           </p>
-          <h2 class="language-lithuanian">Kam?</h2>
-          <p class="language-lithuanian">
+          <h2 data-language="lt">Kam?</h2>
+          <p data-language="lt">
             &emsp;&emsp;Po šalį ir pasaulį išsibarsčiusiems šeimos nariams ir draugams. Taip pat visiems, kas domisi vaikiškais meniniais eksperimentais
             ir kam pasisekė pakliūti į mūsų mažą interneto kampelį.</p>
         </div>
       </div>
       <div class="section" id="about-section">
         <div class="div-main-text">
-          <h2 class="language-english">About</h2>
-          <p class="language-english">
+          <h2 data-language="en">About</h2>
+          <p data-language="en">
             &emsp;&emsp;Two little girls, some paint, one dad, some code. Just like they are exploring new horizons with sheets of paper and crayons,
             so am I discovering new possibilities with a laptop and lines of code. </p>
-          <h2 class="language-lithuanian">Apie</h2>
-          <p class="language-lithuanian">
+          <h2 data-language="lt">Apie</h2>
+          <p data-language="lt">
             &emsp;&emsp;Dvi mažos mergaitės, truputis dažų, vienas tėtis, truputis kodo. Kaip jos kiekvieną dieną atranda naujus horizontus su popieriaus
             lapais ir kreidelėmis, taip ir aš atrandu naujas galimybes su kompiuteriu ir kodo eilutėmis.</p>
         </div>
@@ -197,494 +198,18 @@
         </div>
       </div>
       <div class="section" id="gallery-section">
-        <div class="div-main-text div-gallery-text">
-          <h2 class="language-english gallery-title">The Gallery</h2>
-          <p class="language-english"></p>
-          <h2 class="language-lithuanian gallery-title">Galerija</h2>
-          <p class="language-lithuanian"></p>
+        <div class="div-main-text div-gallery-text"> 
+          <h2 data-language="en" class="gallery-title">The Gallery</h2>
+          <p data-language="en"></p>
+          <h2 data-language="lt" class="gallery-title">Galerija</h2>
+          <p data-language="lt"></p>
         </div>
-        <div id="div-gallery-items">
-<!-- Viltautes drawings -->
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-01-Playing-With-Water-web.jpg"
-               alt="Playing With Water"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Playing With Water"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2 m., "Žaidimas Su Vandeniu"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-02-Wild-Strawberries-web.jpg"
-               alt="Wild Strawberries"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Wild Strawberries"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Žemuogės"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-03-Sunny-Day-web.jpg"
-               alt="Sunny Day"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Sunny Day"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Saulėta Diena"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-04-An-Alpaca-web.jpg"
-               alt="An Alpaca"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "An Alpaca"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Alpaka"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-05-Happy-Abstraction-web.jpg"
-               alt="Happy Abstraction"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Happy Abstraction"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Linksma Abstrakcija"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-06-The-Horse-Is-Hidding-web.jpg"
-               alt="The Horse Is Hiding"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "The Horse Is Hiding"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Arklys Slepiasi"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-07-M-is-for-Mom-web.jpg"
-               alt="M Is For Mom"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "M Is For Mom"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "M reiškia Mamą"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-08-A-Sheep-web.jpg"
-               alt="A Sheep"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "A Sheep"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Avis"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-09-A-Sun-Bunny-web.jpg"
-               alt="A Sun Bunny"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "A Sun Bunny"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Saulės Zuikutis"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-10-Meadow-web.jpg"
-               alt="Meadow"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Meadow"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Pieva"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-11-A-Whirlwind-web.jpg"
-               alt="A Whirlwind"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "A Whirlwind"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Sūkurys"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-12-Meadow-2.0-web.jpg"
-               alt="Meadow 2.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Meadow 2.0"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Pieva 2.0"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-13-Everything-All-At-Once-web.jpg"
-               alt="Everything All At Once"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Everything All At Once"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Viskas Iškart"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-14-Feeling-Fishy-web.jpg"
-               alt="Feeling Fishy"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Feeling Fishy"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Kyla Įtarimas"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-15-Meadow-3.0-web.jpg"
-               alt="Meadow 3.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Meadow 3.0"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Pieva 3.0"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-16-Fishing-web.jpg"
-               alt="Fishing"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Fishing"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Žvejyba"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-17-Feeling-Confused-web.jpg"
-               alt="Feeling Confused"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Feeling Confused"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Sutrikusi"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-18-Meadow-4.0-web.jpg"
-               alt="Meadow 4.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "Meadow 4.0"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Pieva 4.0"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-19-A-Peaking-Bear-web.jpg"
-               alt="A Peaking Bear"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "A Peaking Bear"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Meška Dairosi"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-20-Bird-s-Flight-web.jpg"
-               alt="Bird's Flight"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Bird's Flight"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Paukščio Skrydis"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-21-Sunny-Beach-web.jpg"
-               alt="Sunny Beach"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Sunny Beach"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Saulėtas Paplūdimys"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-22-Patterns-web.jpg"
-               alt="Patterns"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Patterns"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Raštai"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-23-Patterns-2.0-web.jpg"
-               alt="Patterns 2.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Patterns 2.0"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Raštai 2.0"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-24-My-Kite-web.jpg"
-               alt="My Kite"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "My Kite"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Mano Aitvaras"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-25-The-Sea-Is-Huge-web.jpg"
-               alt="The Sea Is Huge"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "The Sea Is Huge"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Jūra Yra Milžiniška"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-26-Ice-Cream-Hills-web.jpg"
-               alt="Ice Cream Hills"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Ice Cream Hills"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Ledų Kalnai"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-27-The-Labyrinth-web.jpg"
-               alt="The Labyrinth"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "The Labyrinth"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Labirintas"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-28-Windy-Shenanigans-web.jpg"
-               alt="Windy Shenanigans"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Wind Shenanigans" </figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Vėjo Išdaigos"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-29-The-Hierarchy-web.jpg"
-               alt="The Hierarchy"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "The Hierarchy"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Hierarchija"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-30-The-Fight-web.jpg"
-               alt="The Fight"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "The Fight"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Kova"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-31-Meadow-At-Night-web.jpg"
-               alt="Meadow At Night"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Meadow At Night"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Pieva Naktį"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Viltaute-32-The-First-One-web.jpg"
-               alt="Viltaute's First One"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Viltaute, 1 y/o, "The First Drawing"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 1m., "Pirmasis Piešinys</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="Gallery items/Gallery items drawings/Viltaute-33-Beetroot-Soup-web.jpg"
-                alt="Beetroot Soup"
-                class="gallery-image"
-                loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Cold Beetroot Soup"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Šaltibarščiai"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="Gallery items/Gallery items drawings/Viltaute-34-Walking-With-An-Umbrella-web.jpg"
-                alt="Umbrella"
-                class="gallery-image"
-                loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Walking With An Umbrella"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Pasivaikščiojimas Su Skėčiu"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="Gallery items/Gallery items drawings/Viltaute-35-Fruits-web.jpg"
-                alt="Fruits"
-                class="gallery-image"
-                loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Fruits"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Vaisiai"</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="Gallery items/Gallery items drawings/Viltsaute-36-Patterns-3.0-web.jpg"
-                alt="Patterns 3.0"
-                class="gallery-image"
-                loading="lazy">
-          <figcaption class="language-english">Viltaute, 2 y/o, "Patterns 3.0"</figcaption>
-          <figcaption class="language-lithuanian">Viltautė, 2m., "Raštai 3.0"</figcaption>
-        </figure>
-<!-- NEW VILTAUTE'S DRAWINGS GO BELOW THIS LINE -->
-
-<!-- NEW VILTAUTE'S DRAWINGS GO ABOVE THIS LINE -->
-
-<!-- Jogailes drawings -->
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items drawings/Jogaile-01-The-First-One-web.jpg"
-               alt="Jogaile's First One"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Jogaile, 1 y/o, "The First Drawing"</figcaption>
-          <figcaption class="language-lithuanian">Jogaile, 1 m., "Pirmasis Piešinys"</figcaption>
-        </figure>
-<!-- NEW JOGAILE'S DRAWINGS GO BELOW THIS LINE -->
-
-<!-- NEW JOGAILE'S DRAWINGS GO ABOVE THIS LINE -->
-
-<!-- Cardboard works -->
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-01-Panda-web.jpg"
-               alt="Panda"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Panda</figcaption>
-          <figcaption class="language-lithuanian">Panda</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-02-Ostrich-web.jpg"
-               alt="Ostrich"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Ostrich</figcaption>
-          <figcaption class="language-lithuanian">Strutis</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-03-Monkey-web.jpg"
-               alt="Monkey"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Monkey</figcaption>
-          <figcaption class="language-lithuanian">Beždžionė</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-04-Penguin-Kid-web.jpg"
-               alt="Penguin Kid"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Penguin Kid</figcaption>
-          <figcaption class="language-lithuanian">Pingvinukas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-05-Penguin-Dad-web.jpg"
-               alt="Penguin Dad"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Penguin Dad</figcaption>
-          <figcaption class="language-lithuanian">Tėtis Pingvinas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-06-Theater-1.0-web.jpg"
-               alt="Theater 1.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Theater 1.0</figcaption>
-          <figcaption class="language-lithuanian">Teatras 1.0</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-07-Theater-2.0-web.jpg"
-               alt="Theater 2.0"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Theater 2.0</figcaption>
-          <figcaption class="language-lithuanian">Teatras 2.0</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-08-Giraffe-web.jpg"
-               alt="Giraffe"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Giraffe</figcaption>
-          <figcaption class="language-lithuanian">Žirafa</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-09-Car-web.jpg"
-               alt="Car"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Car</figcaption>
-          <figcaption class="language-lithuanian">Mašina</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-10-London-Bus-web.jpg"
-               alt="London Bus"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">London Bus</figcaption>
-          <figcaption class="language-lithuanian">Londono Autobusiukas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-11-House-Nr.1-web.jpg"
-               alt="House Nr. 1"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">House Nr. 1</figcaption>
-          <figcaption class="language-lithuanian">Namas Nr. 1</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-12-Crocodile-web.jpg"
-               alt="Crocodile"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Crocodile</figcaption>
-          <figcaption class="language-lithuanian">Krokodilas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-13-Baby-Elephant-web.jpg"
-               alt="Baby Elephant"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Baby Elephant</figcaption>
-          <figcaption class="language-lithuanian">Drambliukas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-14-Peacock-web.jpg"
-               alt="Peacock"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Peacock</figcaption>
-          <figcaption class="language-lithuanian">Povas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-15-Lion-Mask-web.jpg"
-               alt="Lion Mask"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Lion Mask</figcaption>
-          <figcaption class="language-lithuanian">Liūto Kaukė</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-16-Bunny-Mask-web.jpg"
-               alt="Bunny Mask"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Bunny Mask</figcaption>
-          <figcaption class="language-lithuanian">Kiškio Kaukė</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-17-Baby-Lion-web.jpg"
-               alt="Baby Lion"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Baby Lion</figcaption>
-          <figcaption class="language-lithuanian">Liūtukas</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-18-Bear-web.jpg"
-               alt="Bear"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Bear</figcaption>
-          <figcaption class="language-lithuanian">Meška</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-19-Hedgehog-web.jpg"
-               alt="Hedgehog"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Hedgehog</figcaption>
-          <figcaption class="language-lithuanian">Ežys</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="gallery items/Gallery items cardboard/Cardboard-20-Owl-web.jpg"
-               alt="Owl"
-               class="gallery-image"
-               loading="lazy">
-          <figcaption class="language-english">Owl</figcaption>
-          <figcaption class="language-lithuanian">Pelėda</figcaption>
-        </figure>
-        <figure class="gallery-item">
-          <img src="Gallery items/Gallery items cardboard/Cardboard-21-Monsters-web.jpg"
-                alt="Monsters"
-                class="gallery-image"
-                loading="lazy">
-          <figcaption class="language-english">Monsters</figcaption>
-          <figcaption class="language-lithuanian">Pabaisos</figcaption>
-        </figure>
-<!-- NEW CARDBOARD WORKS GO BELOW THIS LINE -->
-
-<!-- NEW CARDBOARD WORKS GO ABOVE THIS LINE -->
+      <div id="div-gallery-items">
+          
       </div>
       </div>
     </div>
-    <script src="SistersGallery.js"></script>
+    <script src="sisters.js"></script>
+    <script src="sisters_add.js"></script>
   </body>
 </html>
