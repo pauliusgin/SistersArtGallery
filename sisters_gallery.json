@@ -1,5 +1,18 @@
 [
     {
+        "authorEN": null,
+        "authorLT": null,
+        "age": null,
+        "titleEN": "Cat",
+        "titleLT": "Katė",
+        "typeEN": "cardboard",
+        "typeLT": "kartonas",
+        "methodEN": "gouache",
+        "methodLT": "guašas",
+        "url": "gallery items/Gallery items cardboard/2023-09-cardboard-cat-web.jpg",
+        "dateAdded": "2023-09"
+    },
+    {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
         "age": 2,
