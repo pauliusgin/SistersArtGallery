@@ -1,8 +1,8 @@
 [
     {
-        "authorEN": null,
-        "authorLT": null,
-        "age": null,
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 3,
         "titleEN": "Cat",
         "titleLT": "Katė",
         "typeEN": "cardboard",
