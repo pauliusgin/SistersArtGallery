@@ -1,3 +1,50 @@
+//* Language change section
+
+// changing language with a button 
+const languageButtonLT = document.getElementById('LT-flag');
+const languageButtonEN = document.getElementById('EN-flag');
+
+function switchToLithuanian() {
+    const language = document.querySelectorAll("[data-language]");
+    language.forEach(element => {
+        if (element.getAttribute("data-language") === "lt") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    });
+}
+
+function switchToEnglish() {
+    const language = document.querySelectorAll("[data-language]");
+    language.forEach(element => {
+        if (element.getAttribute("data-language") === "en") {
+            element.style.display = "block";
+        } else {
+            element.style.display = "none";
+        }
+    });
+}
+
+languageButtonLT.addEventListener("click", switchToLithuanian);
+languageButtonEN.addEventListener("click", switchToEnglish);
+
+// determining language when loading gallery images
+const theGallery = document.getElementById("div-gallery-items");
+
+const mutationObserver = new MutationObserver( () => {
+    const lithuanianLanguageSelected = window.getComputedStyle(languageButtonEN).display;
+        if (lithuanianLanguageSelected === "block") {
+            switchToLithuanian();
+    }
+})
+
+mutationObserver.observe(theGallery, {childList: true})
+
+
+// ------------------------------------------------------------------------------
+
+
 //* globally declaring the sisters gallery picture array for further use
 let sistersGalleryArray; 
 
@@ -49,7 +96,7 @@ async function fetchAndCreate() {
     const response = await fetch("sisters_gallery.json");
     const pictureArray = await response.json();
     sistersGalleryArray = pictureArray;
-    pictureArray.forEach((picture) => {
+    pictureArray.forEach(picture => {
         createGalleryItem(picture);
     })
 }
@@ -63,13 +110,13 @@ document.addEventListener("DOMContentLoaded", fetchAndCreate);
 // function to remove currently displayed gallery items
 function removeCurrent() {
     let galleryItems = document.querySelectorAll(".gallery-item")
-    galleryItems.forEach((item) => {item.remove()});
+    galleryItems.forEach(item => {item.remove()});
 }
 
 // function to show all gallery items
 function showAllGallery() {
     removeCurrent();
-    sistersGalleryArray.forEach((picture) => {
+    sistersGalleryArray.forEach(picture => {
         createGalleryItem(picture);
     })
     console.log(document.querySelectorAll(".gallery-item").length);
@@ -78,28 +125,28 @@ function showAllGallery() {
 // function to show gallery items only by Viltaute
 function filterByViltaute() {
     removeCurrent();
-    let filteredByViltaute = sistersGalleryArray.filter((picture) => picture.authorEN === "Viltaute");
-    filteredByViltaute.forEach((picture) => {
+    let filteredByViltaute = sistersGalleryArray.filter(picture => picture.authorEN === "Viltaute");
+    filteredByViltaute.forEach(picture => {
         createGalleryItem(picture);
     })
-console.log(document.querySelectorAll(".gallery-item").length);
+    console.log(document.querySelectorAll(".gallery-item").length);
 }
 
 // function to show gallery items only by Jogaile
 function filterByJogaile() {
     removeCurrent();
-    let filteredByJogaile = sistersGalleryArray.filter((picture) => picture.authorEN === "Jogaile");
-    filteredByJogaile.forEach((picture) => {
+    let filteredByJogaile = sistersGalleryArray.filter(picture => picture.authorEN === "Jogaile");
+    filteredByJogaile.forEach(picture => {
     createGalleryItem(picture);
     })
-console.log(document.querySelectorAll(".gallery-item").length); 
+    console.log(document.querySelectorAll(".gallery-item").length); 
 }
 
 // function to show only cardboard gallery items
 function filterByCardboard() {
     removeCurrent();
-    let filteredByCardboard = sistersGalleryArray.filter((picture) => picture.typeEN === "cardboard");
-    filteredByCardboard.forEach((picture) => {
+    let filteredByCardboard = sistersGalleryArray.filter(picture => picture.typeEN === "cardboard");
+    filteredByCardboard.forEach(picture => {
         createGalleryItem(picture);
     })
     console.log(document.querySelectorAll(".gallery-item").length);
@@ -119,11 +166,11 @@ let filterOptions = {
 
 // function to run a filter function based on which option is selected
 function filterResult(selectedElement) {
-let optionValue = selectedElement.value;
-let selectedFilter = filterOptions[optionValue];
-if (optionValue) {
-    selectedFilter();
-}
+    let optionValue = selectedElement.value;
+    let selectedFilter = filterOptions[optionValue];
+    if (optionValue) {
+        selectedFilter();
+    }
 }
 
 // event listeners

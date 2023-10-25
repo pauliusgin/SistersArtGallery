@@ -1,37 +1,3 @@
-// ------------------------------------------------------------------------------
-
-//* Language change section
-
-const languageButtonLT = document.getElementById('LT-flag');
-const languageButtonEN = document.getElementById('EN-flag');
-
-function switchToLithuanian() {
-    const language = document.querySelectorAll("[data-language]");
-    language.forEach(element => {
-        if (element.getAttribute("data-language") === "lt") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-    });
-}
-
-function switchToEnglish() {
-    const language = document.querySelectorAll("[data-language]");
-    language.forEach(element => {
-        if (element.getAttribute("data-language") === "en") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-    });
-}
-
-languageButtonLT.addEventListener("click", switchToLithuanian);
-languageButtonEN.addEventListener("click", switchToEnglish);
-
-// ------------------------------------------------------------------------------
-
 //* hamburger menu section  
 
 const openMenuButton = document.querySelector(".open-menu-button");
