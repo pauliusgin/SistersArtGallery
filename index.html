@@ -19,6 +19,8 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Merienda">
+    <script src="sisters_appearance.js" defer></script>
+    <script src="sisters_functionality.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -51,17 +53,23 @@
                     class="open-filter-button-image">
             </button>
             <button type="button" class="nav-button close-filter-button">&#9932;</button>
-            <div class="filter-label">
-              <label for="filter-options" class="filter-label" data-language="en" >Show only</label>
-              <label for="filter-options" class="filter-label" data-language="lt" >Rodyti tik</label>
+            <div class="filter-label ">
+              <label for="select-options-EN" class="filter-label" data-language="en" >Show</label>
+              <label for="select-options-LT" class="filter-label" data-language="lt" >Rodoma</label>
             </div>
-            <div class="filter-options" name="filter-options">
-              <button class="filter-options-button" data-language="en" data-filter="Viltaute" type="button">Viltaute</button>
-              <button class="filter-options-button" data-language="en" data-filter="Jogaile" type="button">Jogaile</button>
-              <button class="filter-options-button" data-language="en" data-filter="cardboard" type="button">Cardboard</button>
-              <button class="filter-options-button" data-language="lt" data-filter="Viltaute" type="button">Viltautė</button>
-              <button class="filter-options-button" data-language="lt" data-filter="Jogaile" type="button">Jogailė</button>
-              <button class="filter-options-button" data-language="lt" data-filter="cardboard" type="button">Kartonas</button>
+            <div class="filter-options">
+              <select class="select-options filter-select-options" data-language="en"  id="filter-options-EN" title="select">
+                <option value="everything" data-language="en">Everything</option>
+                <option value="viltaute" data-language="en">Viltaute's</option>
+                <option value="jogaile" data-language="en">Jogaile's</option>
+                <option value="cardboard" data-language="en">Cardboard</option>
+              </select>
+              <select class="select-options filter-select-options" data-language="lt"  id="filter-options-LT" title="select">
+                <option value="everything" data-language="lt">Viskas</option>
+                <option value="viltaute" data-language="lt">Viltautės</option>
+                <option value="jogaile" data-language="lt">Jogailės</option>
+                <option value="cardboard" data-language="lt">Kartonas</option>
+              </select>
             </div>
           </div>
           <div class="controls-sort">
@@ -209,7 +217,5 @@
       </div>
       </div>
     </div>
-    <script src="sisters_appearance.js"></script>
-    <script src="sisters_functionality.js"></script>
   </body>
 </html>

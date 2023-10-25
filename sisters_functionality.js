@@ -60,12 +60,6 @@ document.addEventListener("DOMContentLoaded", fetchAndCreate);
 
 //* filtering 
 
-// initial state of the gallery
-let showingAllGalleryItems = true;
-let showingOnlyViltaute = false;
-let showingOnlyJogaile = false;
-let showingOnlyCardboard = false;
-
 // function to remove currently displayed gallery items
 function removeCurrent() {
     let galleryItems = document.querySelectorAll(".gallery-item")
@@ -74,83 +68,67 @@ function removeCurrent() {
 
 // function to show all gallery items
 function showAllGallery() {
+    removeCurrent();
     sistersGalleryArray.forEach((picture) => {
         createGalleryItem(picture);
     })
+    console.log(document.querySelectorAll(".gallery-item").length);
 } 
 
-// function to toggle gallery items only by Viltaute
+// function to show gallery items only by Viltaute
 function filterByViltaute() {
-    if (showingAllGalleryItems || showingOnlyJogaile || showingOnlyCardboard) {
-        removeCurrent();
-        let filteredByViltaute = sistersGalleryArray.filter((picture) => picture.authorEN === "Viltaute");
-        filteredByViltaute.forEach((picture) => {
-            createGalleryItem(picture);
-        })
-        showingAllGalleryItems = false;
-        showingOnlyViltaute = true;
-    } else {
-        removeCurrent();
-        showAllGallery();
-        showingAllGalleryItems = true;
-        showingOnlyViltaute = false;
-    }
-    console.log(document.querySelectorAll(".gallery-item").length);
+    removeCurrent();
+    let filteredByViltaute = sistersGalleryArray.filter((picture) => picture.authorEN === "Viltaute");
+    filteredByViltaute.forEach((picture) => {
+        createGalleryItem(picture);
+    })
+console.log(document.querySelectorAll(".gallery-item").length);
 }
 
 // function to show gallery items only by Jogaile
 function filterByJogaile() {
-    if (showingAllGalleryItems || showingOnlyViltaute || showingOnlyCardboard) {
-        removeCurrent();
-        let filteredByJogaile = sistersGalleryArray.filter((picture) => picture.authorEN === "Jogaile");
-        filteredByJogaile.forEach((picture) => {
-        createGalleryItem(picture);
-        })
-        showingAllGalleryItems = false;
-        showingOnlyJogaile = true;
-    } else {
-        removeCurrent();
-        showAllGallery();
-        showingAllGalleryItems = true;
-        showingOnlyJogaile = false;
-    }
-    console.log(document.querySelectorAll(".gallery-item").length); 
+    removeCurrent();
+    let filteredByJogaile = sistersGalleryArray.filter((picture) => picture.authorEN === "Jogaile");
+    filteredByJogaile.forEach((picture) => {
+    createGalleryItem(picture);
+    })
+console.log(document.querySelectorAll(".gallery-item").length); 
 }
 
 // function to show only cardboard gallery items
 function filterByCardboard() {
-    if (showingAllGalleryItems || showingOnlyViltaute || showingOnlyJogaile) {
-        removeCurrent();
-        let filteredByCardboard = sistersGalleryArray.filter((picture) => picture.typeEN === "cardboard");
-        filteredByCardboard.forEach((picture) => {
-            createGalleryItem(picture);
-        })
-        showingAllGalleryItems = false;
-        showingOnlyCardboard = true;
-    } else {
-        removeCurrent();
-        showAllGallery();
-        showingAllGalleryItems = true;
-        showingOnlyCardboard = false;
-    }
+    removeCurrent();
+    let filteredByCardboard = sistersGalleryArray.filter((picture) => picture.typeEN === "cardboard");
+    filteredByCardboard.forEach((picture) => {
+        createGalleryItem(picture);
+    })
     console.log(document.querySelectorAll(".gallery-item").length);
 }
 
-// event handlers for filter buttons
-const filterByViltauteButtons = document.querySelectorAll("[data-filter=\"Viltaute\"]");
-filterByViltauteButtons.forEach((button) => {
-    button.addEventListener("click", filterByViltaute);
-})
+// the select elements for both languages
+let filterSelectOptionEN = document.getElementById("filter-options-EN");
+let filterSelectOptionLT = document.getElementById("filter-options-LT");
 
-const filterByJogaileButtons = document.querySelectorAll("[data-filter=\"Jogaile\"]");
-filterByJogaileButtons.forEach((button) => {
-    button.addEventListener("click", filterByJogaile);
-})
+// match available options to their respective functions
+let filterOptions = {
+"everything": showAllGallery,
+"viltaute": filterByViltaute,
+"jogaile": filterByJogaile,
+"cardboard": filterByCardboard
+}
 
-const filterByCardboardButtons = document.querySelectorAll("[data-filter=\"cardboard\"]");
-filterByCardboardButtons.forEach((button) => {
-    button.addEventListener("click", filterByCardboard);
-})
+// function to run a filter function based on which option is selected
+function filterResult(selectedElement) {
+let optionValue = selectedElement.value;
+let selectedFilter = filterOptions[optionValue];
+if (optionValue) {
+    selectedFilter();
+}
+}
+
+// event listeners
+filterSelectOptionEN.addEventListener("change", () => filterResult(filterSelectOptionEN));
+filterSelectOptionLT.addEventListener("change", () => filterResult(filterSelectOptionLT));
 
 
 //* sorting

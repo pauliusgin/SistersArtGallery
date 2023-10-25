@@ -333,30 +333,6 @@ figcaption {
       flex-direction: column;
       align-items: center;
     }
-
-        .filter-options {
-          display: flex;
-          gap: 5px;
-        }
-
-            .filter-options-button {
-              font-family: "Merienda", serif;
-              border: 1px solid gainsboro;
-              border-radius: 5px;
-              background-color: var(--light-brown);
-              box-shadow: 1px 1px 2px black;
-              cursor: pointer;
-            }
-
-            .filter-options-button:hover {
-              background-color: var(--light-blue);
-              transform: translateY(-1px);
-            }
-
-            .filter-options-button:active {
-              transform: translateY(1px);
-              box-shadow: 1px 1px 0px black;
-            }
         
     .controls-sort {
       display: flex;
@@ -371,6 +347,8 @@ figcaption {
           border-radius: 5px;
           cursor: pointer;
           box-shadow: 1px 1px 2px black;
+          width: 185px;
+          text-align: center;
         }
 
     .controls-search {
@@ -466,11 +444,9 @@ align-items: center;
 
       .filter-options {
         position: absolute;
-        display: flex;
-        flex-direction: column;
-        bottom: -93px;
-        left: 0px;
         display: none;
+        bottom: -37px;
+        left: 0;
       }
 
           .filter-options-button {

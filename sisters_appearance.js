@@ -55,11 +55,12 @@ function hideMenu() {
     closeMenuButton.style.display = "none"; // hides X
 }
 
+// todo fix this below
 // function to prevent "click" when "touch" event is detected
 function preventClick(event) {
-    isTouchDevice = true;
-    event.preventDefault();
-    isTouchDevice = false;
+        isTouchDevice = true;
+        event.preventDefault();
+        isTouchDevice = false;
 }
 
 // function to show the menu with a touch
@@ -166,19 +167,21 @@ window.addEventListener("scroll", showGalleryControls);
 const openFilterButton = document.querySelector(".open-filter-button");
 const closeFilterButton = document.querySelector(".close-filter-button");
 const theFilter = document.querySelector(".filter-options");
+const theFilterOptionsEN = document.getElementById("filter-options-EN");
+const theFilterOptionsLT = document.getElementById("filter-options-LT");
 
 // function to show the filter
 function showFilter() {
-    theFilter.style.display = "flex"; // opens filter
-    openFilterButton.style.display = "none"; // hides triangle icon
-    closeFilterButton.style.display = "block"; // shows X
+    theFilter.style.display = "block";
+    openFilterButton.style.display = "none";
+    closeFilterButton.style.display = "block";
 }
 
 // function to hide the filter
 function hideFilter() {
-    theFilter.style.display = "none"; // closes filter
-    openFilterButton.style.display = "block"; // shows triangle icon
-    closeFilterButton.style.display = "none"; // hides X
+    theFilter.style.display = "none";
+    openFilterButton.style.display = "block";
+    closeFilterButton.style.display = "none";
 }
 
 // function to show the filter when triangle is touched 
@@ -198,6 +201,8 @@ function detectClickOutsideFilter(event) {
     const closeFilterButtonDisplay = window.getComputedStyle(closeFilterButton).display;
     return (closeFilterButtonDisplay === "block" &&
     event.target !== theFilter && 
+    event.target !== theFilterOptionsEN &&
+    event.target !== theFilterOptionsLT &&
     event.target !== openFilterButton && 
     event.target !== closeFilterButton
     );
