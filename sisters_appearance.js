@@ -116,7 +116,7 @@ function showGalleryControls() {
     const galleryTop = gallerySection.offsetTop;
     const galleryBottom = galleryTop + gallerySection.offsetHeight;
     galleryControls.style.display = "none";
-    if (currentYPosition + 1 >= galleryTop && currentYPosition <= galleryBottom) {
+    if (currentYPosition + 200 >= galleryTop && currentYPosition <= galleryBottom) {
         galleryControls.style.display = "flex";
     }
 }
