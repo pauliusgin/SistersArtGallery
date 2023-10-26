@@ -54,8 +54,8 @@
             </button>
             <button type="button" class="nav-button close-filter-button">&#9932;</button>
             <div class="filter-label ">
-              <label for="select-options-EN" class="filter-label" data-language="en" >Show</label>
-              <label for="select-options-LT" class="filter-label" data-language="lt" >Rodoma</label>
+              <label for="filter-options-EN" class="filter-label" data-language="en" >Show</label>
+              <label for="filter-options-LT" class="filter-label" data-language="lt" >Rodoma</label>
             </div>
             <div class="filter-options">
               <select class="select-options filter-select-options" data-language="en"  id="filter-options-EN" title="select">
@@ -80,19 +80,19 @@
             </button>
             <button type="button" class="nav-button close-sort-button">&#9932;</button>
             <div class="sort-label">
-              <label for="select-options-EN" class="sort-label" data-language="en" >Sort by</label>
-              <label for="select-options-LT" class="sort-label" data-language="lt" >Rūšiuoti pagal</label>
+              <label for="sort-options-EN" class="sort-label" data-language="en" >Sort by</label>
+              <label for="sort-options-LT" class="sort-label" data-language="lt" >Rūšiuoti pagal</label>
             </div>
             <div class="sort-options">
-              <select class="select-options" data-language="en"  id="select-options-EN" title="select">
+              <select class="select-options" data-language="en"  id="sort-options-EN" title="select">
                 <option data-language="en">(select)</option>
-                <option data-language="en">Date - newest to oldest</option>
-                <option data-language="en">Date - oldest to newest</option>
+                <option value="newest" data-language="en">Date - newest to oldest</option>
+                <option value="oldest" data-language="en">Date - oldest to newest</option>
               </select>
-              <select class="select-options" data-language="lt"  id="select-options-LT" title="select">
+              <select class="select-options" data-language="lt"  id="sort-options-LT" title="select">
                 <option data-language="lt">(pasirinkite)</option>
-                <option data-language="lt">Data - pirma naujausi</option>
-                <option data-language="lt">Data - pirma seniausi</option>
+                <option value="newest" data-language="lt">Data - pirma naujausi</option>
+                <option value="oldest" data-language="lt">Data - pirma seniausi</option>
               </select>
             </div>
           </div>
@@ -104,12 +104,12 @@
             </button>
             <button class="nav-button close-search-button" type="button">&#9932;</button>
             <div class="search-label">
-              <label for="search" class="search-label" data-language="en" >Search</label>
-              <label for="search" class="search-label" data-language="lt" >Ieškoti</label>
+              <label for="search-field-EN" class="search-label" data-language="en" >Search</label>
+              <label for="search-field-LT" class="search-label" data-language="lt" >Ieškoti</label>
             </div>
             <div class="search-options">
               <div class="input-field">
-                <button id="search-field-button" type="button">
+                <button id="search-field-button" type="submit">
                   <img src="Images/magnifying-glass-icon-50px.png"
                     alt="Magnifying glass icon"
                     class="search-field-button-image">

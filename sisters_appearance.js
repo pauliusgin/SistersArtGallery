@@ -202,8 +202,8 @@ document.addEventListener("click", hideFilterOnClickOutside);
 const openSortingButton = document.querySelector(".open-sort-button");
 const closeSortingButton = document.querySelector(".close-sort-button");
 const theSorting = document.querySelector(".sort-options");
-const theSortingOptionsEN = document.getElementById("select-options-EN");
-const theSortingOptionsLT = document.getElementById("select-options-LT");
+const theSortingOptionsEN = document.getElementById("sort-options-EN");
+const theSortingOptionsLT = document.getElementById("sort-options-LT");
 
 // function to show sorting
 function showSorting() {

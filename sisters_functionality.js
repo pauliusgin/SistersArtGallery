@@ -42,9 +42,6 @@ const mutationObserver = new MutationObserver( () => {
 mutationObserver.observe(theGallery, {childList: true})
 
 
-// ------------------------------------------------------------------------------
-
-
 //* globally declaring the sisters gallery picture array for further use
 let sistersGalleryArray; 
 
@@ -92,10 +89,13 @@ function createGalleryItem(picture) {
 } 
 
 // function to fetch the .json file and create gallery items from an array of pictures in it
+
+
 async function fetchAndCreate() {
     const response = await fetch("sisters_gallery.json");
     const pictureArray = await response.json();
     sistersGalleryArray = pictureArray;
+    pictureArray.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
     pictureArray.forEach(picture => {
         createGalleryItem(picture);
     })
@@ -153,11 +153,11 @@ function filterByCardboard() {
 }
 
 // the select elements for both languages
-let filterSelectOptionEN = document.getElementById("filter-options-EN");
-let filterSelectOptionLT = document.getElementById("filter-options-LT");
+const filterSelectOptionEN = document.getElementById("filter-options-EN");
+const filterSelectOptionLT = document.getElementById("filter-options-LT");
 
 // match available options to their respective functions
-let filterOptions = {
+const filterOptions = {
 "everything": showAllGallery,
 "viltaute": filterByViltaute,
 "jogaile": filterByJogaile,
@@ -179,3 +179,39 @@ filterSelectOptionLT.addEventListener("change", () => filterResult(filterSelectO
 
 
 //* sorting
+
+// function to sort gallery items by date, newest to oldest
+const sortByDateNewestFirst = (galleryItems) => {
+    galleryItems.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+}
+
+//function to sort gallery items by date, oldest to newest
+const sortByDateOldestFirst = (galleryItems) => {
+    galleryItems.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+}
+
+const sortingOptions = {
+    "newest": sortByDateNewestFirst,
+    "oldest": sortByDateOldestFirst
+}
+
+// function to sort based on which option is selected
+const sortingResult = (selectedElement) => {
+    let optionValue = selectedElement.value;
+    let selectedSorting = sortingOptions[optionValue];
+    if (optionValue) {
+        selectedSorting();
+    }
+}
+
+
+
+const sortByDate = () => {
+    const theGallery = document.getElementById("div-gallery-items");
+    const galleryItems = theGallery.children;
+    console.log(galleryItems)
+    sistersGalleryArray.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+}
+
+let sortSelectOptionEN = document.getElementById("sort-options-EN");
+let sortSelectOptionLT = document.getElementById("sort-options-LT");
