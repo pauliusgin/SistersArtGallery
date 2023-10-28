@@ -77,6 +77,7 @@ function createGalleryItem(picture) {
 
 let allGalleryPictures;
 let picturesCurrentlyBeingDisplayed;
+let sortingOrder;
 
 async function fetchAndCreate() {
     const response = await fetch("sisters_gallery.json");
@@ -84,7 +85,9 @@ async function fetchAndCreate() {
     allGalleryPictures = pictureArray;
     picturesCurrentlyBeingDisplayed = allGalleryPictures;
     pictureArray.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    sortingOrder = "newest first";
     pictureArray.forEach(picture => createGalleryItem(picture));
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder);
 }
 
 // adding gallery items to DOM from a .json file once the page has loaded
@@ -104,8 +107,7 @@ function showAllGallery() {
     removeCurrent();
     picturesCurrentlyBeingDisplayed = allGalleryPictures;
     allGalleryPictures.forEach(picture => createGalleryItem(picture))
-    console.log(document.querySelectorAll(".gallery-item").length);
-    console.log(picturesCurrentlyBeingDisplayed);
+    console.log("All " + document.querySelectorAll(".gallery-item").length + " pictures are being shown.");
 } 
 
 
@@ -115,8 +117,7 @@ function filterByViltaute() {
     let picturesByViltaute = allGalleryPictures.filter(picture => picture.authorEN === "Viltaute");
     picturesCurrentlyBeingDisplayed = picturesByViltaute;
     picturesByViltaute.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length);
-    console.log(picturesCurrentlyBeingDisplayed);
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Viltaute are being shown.");
 }
 
 // function to show gallery items only by Jogaile
@@ -125,8 +126,7 @@ function filterByJogaile() {
     let picturesByJogaile = allGalleryPictures.filter(picture => picture.authorEN === "Jogaile");
     picturesCurrentlyBeingDisplayed = picturesByJogaile;
     picturesByJogaile.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length); 
-    console.log(picturesCurrentlyBeingDisplayed);
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Jogaile are being shown.");
 }
 
 // function to show only cardboard gallery items
@@ -135,8 +135,7 @@ function filterByCardboard() {
     let cardboardPictures = allGalleryPictures.filter(picture => picture.typeEN === "cardboard");
     picturesCurrentlyBeingDisplayed = cardboardPictures;
     cardboardPictures.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length);
-    console.log(picturesCurrentlyBeingDisplayed);
+    console.log(document.querySelectorAll(".gallery-item").length + " cardboard pictures are being shown.");
 }
 
 // the filter select elements for both languages
@@ -185,15 +184,12 @@ const sortOptionsLT = document.getElementById("sort-options-LT");
 
 // function to sort gallery pictures by date
 function sortingResult() {
-    if (sortOptionsEN.value === "newest" || sortOptionsLT.value === "newest") {
-        console.log("newest is selected");
-        sortByDateNewestFirst(picturesCurrentlyBeingDisplayed);
-    } else if (sortOptionsEN.value === "oldest" || sortOptionsLT.value === "oldest") {
-        console.log("oldest is selected");
+    if (sortOptionsEN.value === "oldest" || sortOptionsLT.value === "oldest") {
         sortByDateOldestFirst(picturesCurrentlyBeingDisplayed);
+    } else if (sortOptionsEN.value === "newest" || sortOptionsLT.value === "newest") {
+        sortByDateNewestFirst(picturesCurrentlyBeingDisplayed);
     }
 }
-
 
 // event listeners
 sortOptionsEN.addEventListener("change", sortingResult);
