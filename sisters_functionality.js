@@ -4,10 +4,10 @@
 const languageButtonLT = document.getElementById('LT-flag');
 const languageButtonEN = document.getElementById('EN-flag');
 
-function switchToLithuanian() {
+function switchLanguage(lang) {
     const language = document.querySelectorAll("[data-language]");
     language.forEach(element => {
-        if (element.getAttribute("data-language") === "lt") {
+        if (element.getAttribute("data-language") === lang) {
             element.style.display = "block";
         } else {
             element.style.display = "none";
@@ -15,19 +15,8 @@ function switchToLithuanian() {
     });
 }
 
-function switchToEnglish() {
-    const language = document.querySelectorAll("[data-language]");
-    language.forEach(element => {
-        if (element.getAttribute("data-language") === "en") {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-    });
-}
-
-languageButtonLT.addEventListener("click", switchToLithuanian);
-languageButtonEN.addEventListener("click", switchToEnglish);
+languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
+languageButtonEN.addEventListener("click", () => switchLanguage("en"));
 
 // determining language when loading gallery images
 const theGallery = document.getElementById("div-gallery-items");
@@ -35,15 +24,11 @@ const theGallery = document.getElementById("div-gallery-items");
 const mutationObserver = new MutationObserver( () => {
     const lithuanianLanguageSelected = window.getComputedStyle(languageButtonEN).display;
         if (lithuanianLanguageSelected === "block") {
-            switchToLithuanian();
+            switchLanguage("lt");
     }
 })
 
 mutationObserver.observe(theGallery, {childList: true})
-
-
-//* globally declaring the sisters gallery picture array for further use
-let sistersGalleryArray; 
 
 
 //* fetching .json and creating a gallery of pictures from it 
@@ -90,15 +75,16 @@ function createGalleryItem(picture) {
 
 // function to fetch the .json file and create gallery items from an array of pictures in it
 
+let allGalleryPictures;
+let picturesCurrentlyBeingDisplayed;
 
 async function fetchAndCreate() {
     const response = await fetch("sisters_gallery.json");
     const pictureArray = await response.json();
-    sistersGalleryArray = pictureArray;
+    allGalleryPictures = pictureArray;
+    picturesCurrentlyBeingDisplayed = allGalleryPictures;
     pictureArray.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
-    pictureArray.forEach(picture => {
-        createGalleryItem(picture);
-    })
+    pictureArray.forEach(picture => createGalleryItem(picture));
 }
 
 // adding gallery items to DOM from a .json file once the page has loaded
@@ -110,108 +96,105 @@ document.addEventListener("DOMContentLoaded", fetchAndCreate);
 // function to remove currently displayed gallery items
 function removeCurrent() {
     let galleryItems = document.querySelectorAll(".gallery-item")
-    galleryItems.forEach(item => {item.remove()});
+    galleryItems.forEach(item => item.remove());
 }
 
 // function to show all gallery items
 function showAllGallery() {
     removeCurrent();
-    sistersGalleryArray.forEach(picture => {
-        createGalleryItem(picture);
-    })
+    picturesCurrentlyBeingDisplayed = allGalleryPictures;
+    allGalleryPictures.forEach(picture => createGalleryItem(picture))
     console.log(document.querySelectorAll(".gallery-item").length);
+    console.log(picturesCurrentlyBeingDisplayed);
 } 
+
 
 // function to show gallery items only by Viltaute
 function filterByViltaute() {
     removeCurrent();
-    let filteredByViltaute = sistersGalleryArray.filter(picture => picture.authorEN === "Viltaute");
-    filteredByViltaute.forEach(picture => {
-        createGalleryItem(picture);
-    })
+    let picturesByViltaute = allGalleryPictures.filter(picture => picture.authorEN === "Viltaute");
+    picturesCurrentlyBeingDisplayed = picturesByViltaute;
+    picturesByViltaute.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length);
+    console.log(picturesCurrentlyBeingDisplayed);
 }
 
 // function to show gallery items only by Jogaile
 function filterByJogaile() {
     removeCurrent();
-    let filteredByJogaile = sistersGalleryArray.filter(picture => picture.authorEN === "Jogaile");
-    filteredByJogaile.forEach(picture => {
-    createGalleryItem(picture);
-    })
+    let picturesByJogaile = allGalleryPictures.filter(picture => picture.authorEN === "Jogaile");
+    picturesCurrentlyBeingDisplayed = picturesByJogaile;
+    picturesByJogaile.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length); 
+    console.log(picturesCurrentlyBeingDisplayed);
 }
 
 // function to show only cardboard gallery items
 function filterByCardboard() {
     removeCurrent();
-    let filteredByCardboard = sistersGalleryArray.filter(picture => picture.typeEN === "cardboard");
-    filteredByCardboard.forEach(picture => {
-        createGalleryItem(picture);
-    })
+    let cardboardPictures = allGalleryPictures.filter(picture => picture.typeEN === "cardboard");
+    picturesCurrentlyBeingDisplayed = cardboardPictures;
+    cardboardPictures.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length);
+    console.log(picturesCurrentlyBeingDisplayed);
 }
 
-// the select elements for both languages
-const filterSelectOptionEN = document.getElementById("filter-options-EN");
-const filterSelectOptionLT = document.getElementById("filter-options-LT");
-
-// match available options to their respective functions
-const filterOptions = {
-"everything": showAllGallery,
-"viltaute": filterByViltaute,
-"jogaile": filterByJogaile,
-"cardboard": filterByCardboard
-}
+// the filter select elements for both languages
+const filterOptionsEN = document.getElementById("filter-options-EN");
+const filterOptionsLT = document.getElementById("filter-options-LT");
 
 // function to run a filter function based on which option is selected
-function filterResult(selectedElement) {
-    let optionValue = selectedElement.value;
-    let selectedFilter = filterOptions[optionValue];
-    if (optionValue) {
-        selectedFilter();
+function filterResult() {
+    if (filterOptionsEN.value === "viltaute" || filterOptionsLT.value === "viltaute") {
+    filterByViltaute();
+    } else if (filterOptionsEN.value === "jogaile" || filterOptionsLT.value === "jogaile") {
+        filterByJogaile();
+    } else if (filterOptionsEN.value === "cardboard" || filterOptionsLT.value === "cardboard") {
+        filterByCardboard();
+    } else if (filterOptionsEN.value === "everything" || filterOptionsLT.value === "everything") {
+        showAllGallery();
     }
 }
 
 // event listeners
-filterSelectOptionEN.addEventListener("change", () => filterResult(filterSelectOptionEN));
-filterSelectOptionLT.addEventListener("change", () => filterResult(filterSelectOptionLT));
+filterOptionsEN.addEventListener("change", filterResult);
+filterOptionsLT.addEventListener("change", filterResult);
 
 
 //* sorting
 
-// function to sort gallery items by date, newest to oldest
-const sortByDateNewestFirst = (galleryItems) => {
-    galleryItems.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+// function to sort current gallery items by date, newest to oldest
+const sortByDateNewestFirst = (picturesCurrentlyBeingDisplayed) => {
+    removeCurrent();
+    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
+    console.log("New pictures are being shown first")
 }
 
-//function to sort gallery items by date, oldest to newest
-const sortByDateOldestFirst = (galleryItems) => {
-    galleryItems.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+// function to sort current gallery items by date, oldest to newest
+const sortByDateOldestFirst = (picturesCurrentlyBeingDisplayed) => {
+    removeCurrent();
+    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
+    console.log("Old pictures are being shown first")
 }
 
-const sortingOptions = {
-    "newest": sortByDateNewestFirst,
-    "oldest": sortByDateOldestFirst
-}
+// the sorting select elements for both languages
+const sortOptionsEN = document.getElementById("sort-options-EN");
+const sortOptionsLT = document.getElementById("sort-options-LT");
 
-// function to sort based on which option is selected
-const sortingResult = (selectedElement) => {
-    let optionValue = selectedElement.value;
-    let selectedSorting = sortingOptions[optionValue];
-    if (optionValue) {
-        selectedSorting();
+// function to sort gallery pictures by date
+function sortingResult() {
+    if (sortOptionsEN.value === "newest" || sortOptionsLT.value === "newest") {
+        console.log("newest is selected");
+        sortByDateNewestFirst(picturesCurrentlyBeingDisplayed);
+    } else if (sortOptionsEN.value === "oldest" || sortOptionsLT.value === "oldest") {
+        console.log("oldest is selected");
+        sortByDateOldestFirst(picturesCurrentlyBeingDisplayed);
     }
 }
 
 
-
-const sortByDate = () => {
-    const theGallery = document.getElementById("div-gallery-items");
-    const galleryItems = theGallery.children;
-    console.log(galleryItems)
-    sistersGalleryArray.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
-}
-
-let sortSelectOptionEN = document.getElementById("sort-options-EN");
-let sortSelectOptionLT = document.getElementById("sort-options-LT");
+// event listeners
+sortOptionsEN.addEventListener("change", sortingResult);
+sortOptionsLT.addEventListener("change", sortingResult);
