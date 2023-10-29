@@ -13,10 +13,6 @@ function switchLanguage(lang) {
             element.style.display = "none";
         }
     });
-    sortOptionsEN.selectedIndex = 0;
-    sortOptionsLT.selectedIndex = 0;
-    filterOptionsEN.selectedIndex = 0;
-    filterOptionsLT.selectedIndex = 0;
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
@@ -78,6 +74,7 @@ function createGalleryItem(picture) {
 } 
 
 //* global variables below
+//* ----------------------
 // keep the fetched json object
 let allGalleryPictures;
 
@@ -86,7 +83,8 @@ let picturesCurrentlyBeingDisplayed;
 
 //keep track of the sorting order
 let sortingOrder;
-//* global variable above
+//* ----------------------
+//* global variables above
 
 // function to fetch the .json file and create gallery items from an array of pictures in it
 async function fetchAndCreate() {
@@ -176,24 +174,32 @@ const filterOptionsLT = document.getElementById("filter-options-LT");
 function filterResultEN() {
     if (filterOptionsEN.value === "viltaute") {
     filterByViltaute();
+    filterOptionsLT.selectedIndex = 1;
     } else if (filterOptionsEN.value === "jogaile") {
         filterByJogaile();
+        filterOptionsLT.selectedIndex = 2;
     } else if (filterOptionsEN.value === "cardboard") {
         filterByCardboard();
+        filterOptionsLT.selectedIndex = 3;
     } else if (filterOptionsEN.value === "everything") {
         showAllGallery();
+        filterOptionsLT.selectedIndex = 0;
     }
 }
 
 function filterResultLT() {
     if (filterOptionsLT.value === "viltaute") {
     filterByViltaute();
+    filterOptionsEN.selectedIndex = 1;
     } else if (filterOptionsLT.value === "jogaile") {
         filterByJogaile();
+        filterOptionsEN.selectedIndex = 2;
     } else if (filterOptionsLT.value === "cardboard") {
         filterByCardboard();
+        filterOptionsEN.selectedIndex = 3;
     } else if (filterOptionsLT.value === "everything") {
         showAllGallery();
+        filterOptionsEN.selectedIndex = 0;
     }
 }
 
@@ -231,19 +237,27 @@ const englishLanguageSelected = window.getComputedStyle(languageButtonLT).displa
 function sortingResultEN() {
     if (sortOptionsEN.value === "oldest") {
         sortByDateOldestFirst();
+        sortOptionsLT.selectedIndex = 1;
     } else if (sortOptionsEN.value === "newest") {
         sortByDateNewestFirst();
+        sortOptionsLT.selectedIndex = 0;
     }
 }
 
 function sortingResultLT() {
     if (sortOptionsLT.value === "oldest") {
         sortByDateOldestFirst();
+    sortOptionsEN.selectedIndex = 1;
     } else if (sortOptionsLT.value === "newest") {
         sortByDateNewestFirst();
+    sortOptionsEN.selectedIndex = 0;
     }
 }
 
 // event listeners
 sortOptionsEN.addEventListener("change", sortingResultEN);
 sortOptionsLT.addEventListener("change", sortingResultLT);
+
+
+//* search
+
