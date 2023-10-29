@@ -13,6 +13,10 @@ function switchLanguage(lang) {
             element.style.display = "none";
         }
     });
+    sortOptionsEN.selectedIndex = 0;
+    sortOptionsLT.selectedIndex = 0;
+    filterOptionsEN.selectedIndex = 0;
+    filterOptionsLT.selectedIndex = 0;
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
@@ -73,12 +77,18 @@ function createGalleryItem(picture) {
     figure.appendChild(figcaptionLT);
 } 
 
-// function to fetch the .json file and create gallery items from an array of pictures in it
-
+//* global variables below
+// keep the fetched json object
 let allGalleryPictures;
-let picturesCurrentlyBeingDisplayed;
-let sortingOrder;
 
+// keep track of items being displayed in the gallery
+let picturesCurrentlyBeingDisplayed;
+
+//keep track of the sorting order
+let sortingOrder;
+//* global variable above
+
+// function to fetch the .json file and create gallery items from an array of pictures in it
 async function fetchAndCreate() {
     const response = await fetch("sisters_gallery.json");
     const pictureArray = await response.json();
@@ -106,18 +116,27 @@ function removeCurrent() {
 function showAllGallery() {
     removeCurrent();
     picturesCurrentlyBeingDisplayed = allGalleryPictures;
+    if (sortingOrder === "oldest first") {
+        allGalleryPictures.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    } else {
+        allGalleryPictures.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    }
     allGalleryPictures.forEach(picture => createGalleryItem(picture))
-    console.log("All " + document.querySelectorAll(".gallery-item").length + " pictures are being shown.");
+    console.log("All " + document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder);
 } 
-
 
 // function to show gallery items only by Viltaute
 function filterByViltaute() {
     removeCurrent();
     let picturesByViltaute = allGalleryPictures.filter(picture => picture.authorEN === "Viltaute");
     picturesCurrentlyBeingDisplayed = picturesByViltaute;
+    if (sortingOrder === "oldest first") {
+        picturesByViltaute.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    } else {
+        picturesByViltaute.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    }
     picturesByViltaute.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Viltaute are being shown.");
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Viltaute are being shown, " + sortingOrder);
 }
 
 // function to show gallery items only by Jogaile
@@ -125,17 +144,28 @@ function filterByJogaile() {
     removeCurrent();
     let picturesByJogaile = allGalleryPictures.filter(picture => picture.authorEN === "Jogaile");
     picturesCurrentlyBeingDisplayed = picturesByJogaile;
+    if (sortingOrder === "oldest first") {
+        picturesByJogaile.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    } else {
+        picturesByJogaile.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    }
     picturesByJogaile.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Jogaile are being shown.");
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures by Jogaile are being shown, " + sortingOrder);
 }
 
 // function to show only cardboard gallery items
 function filterByCardboard() {
     removeCurrent();
+
     let cardboardPictures = allGalleryPictures.filter(picture => picture.typeEN === "cardboard");
     picturesCurrentlyBeingDisplayed = cardboardPictures;
+    if (sortingOrder === "oldest first") {
+        cardboardPictures.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    } else {
+        cardboardPictures.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    }
     cardboardPictures.forEach(picture => createGalleryItem(picture));
-    console.log(document.querySelectorAll(".gallery-item").length + " cardboard pictures are being shown.");
+    console.log(document.querySelectorAll(".gallery-item").length + " cardboard pictures are being shown, " + sortingOrder);
 }
 
 // the filter select elements for both languages
@@ -143,54 +173,77 @@ const filterOptionsEN = document.getElementById("filter-options-EN");
 const filterOptionsLT = document.getElementById("filter-options-LT");
 
 // function to run a filter function based on which option is selected
-function filterResult() {
-    if (filterOptionsEN.value === "viltaute" || filterOptionsLT.value === "viltaute") {
+function filterResultEN() {
+    if (filterOptionsEN.value === "viltaute") {
     filterByViltaute();
-    } else if (filterOptionsEN.value === "jogaile" || filterOptionsLT.value === "jogaile") {
+    } else if (filterOptionsEN.value === "jogaile") {
         filterByJogaile();
-    } else if (filterOptionsEN.value === "cardboard" || filterOptionsLT.value === "cardboard") {
+    } else if (filterOptionsEN.value === "cardboard") {
         filterByCardboard();
-    } else if (filterOptionsEN.value === "everything" || filterOptionsLT.value === "everything") {
+    } else if (filterOptionsEN.value === "everything") {
+        showAllGallery();
+    }
+}
+
+function filterResultLT() {
+    if (filterOptionsLT.value === "viltaute") {
+    filterByViltaute();
+    } else if (filterOptionsLT.value === "jogaile") {
+        filterByJogaile();
+    } else if (filterOptionsLT.value === "cardboard") {
+        filterByCardboard();
+    } else if (filterOptionsLT.value === "everything") {
         showAllGallery();
     }
 }
 
 // event listeners
-filterOptionsEN.addEventListener("change", filterResult);
-filterOptionsLT.addEventListener("change", filterResult);
+filterOptionsEN.addEventListener("change", filterResultEN);
+filterOptionsLT.addEventListener("change", filterResultLT);
 
 
 //* sorting
 
 // function to sort current gallery items by date, newest to oldest
-const sortByDateNewestFirst = (picturesCurrentlyBeingDisplayed) => {
+const sortByDateNewestFirst = () => {
     removeCurrent();
     picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    sortingOrder = "newest first";
     picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
-    console.log("New pictures are being shown first")
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder)
 }
 
 // function to sort current gallery items by date, oldest to newest
-const sortByDateOldestFirst = (picturesCurrentlyBeingDisplayed) => {
+const sortByDateOldestFirst = () => {
     removeCurrent();
     picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    sortingOrder = "oldest first";
     picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
-    console.log("Old pictures are being shown first")
+    console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder)
 }
 
 // the sorting select elements for both languages
 const sortOptionsEN = document.getElementById("sort-options-EN");
 const sortOptionsLT = document.getElementById("sort-options-LT");
+const englishLanguageSelected = window.getComputedStyle(languageButtonLT).display;
 
 // function to sort gallery pictures by date
-function sortingResult() {
-    if (sortOptionsEN.value === "oldest" || sortOptionsLT.value === "oldest") {
-        sortByDateOldestFirst(picturesCurrentlyBeingDisplayed);
-    } else if (sortOptionsEN.value === "newest" || sortOptionsLT.value === "newest") {
-        sortByDateNewestFirst(picturesCurrentlyBeingDisplayed);
+function sortingResultEN() {
+    if (sortOptionsEN.value === "oldest") {
+        sortByDateOldestFirst();
+    } else if (sortOptionsEN.value === "newest") {
+        sortByDateNewestFirst();
+    }
+}
+
+function sortingResultLT() {
+    if (sortOptionsLT.value === "oldest") {
+        sortByDateOldestFirst();
+    } else if (sortOptionsLT.value === "newest") {
+        sortByDateNewestFirst();
     }
 }
 
 // event listeners
-sortOptionsEN.addEventListener("change", sortingResult);
-sortOptionsLT.addEventListener("change", sortingResult);
+sortOptionsEN.addEventListener("change", sortingResultEN);
+sortOptionsLT.addEventListener("change", sortingResultLT);
