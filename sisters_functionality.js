@@ -13,6 +13,8 @@ function switchLanguage(lang) {
             element.style.display = "none";
         }
     });
+    inputFieldEN.value = "";
+    inputFieldLT.value = "";
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
@@ -45,7 +47,7 @@ function createGalleryItem(picture) {
     galleryImage.classList.add("gallery-image");
     figcaptionEN.setAttribute("data-language", "en");
     figcaptionLT.setAttribute("data-language", "lt");
-    
+
     // add attributes to the pictures
     galleryImage.src = `${picture.url}`;
     galleryImage.alt = `${picture.titleEN}`;
@@ -92,7 +94,7 @@ async function fetchAndCreate() {
     const pictureArray = await response.json();
     allGalleryPictures = pictureArray;
     picturesCurrentlyBeingDisplayed = allGalleryPictures;
-    pictureArray.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    pictureArray.sort((a, b) => new Date(b.date) - new Date(a.date));
     sortingOrder = "newest first";
     pictureArray.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder);
@@ -105,19 +107,19 @@ document.addEventListener("DOMContentLoaded", fetchAndCreate);
 //* filtering 
 
 // function to remove currently displayed gallery items
-function removeCurrent() {
-    let galleryItems = document.querySelectorAll(".gallery-item")
+function removeCurrentGalleryItems() {
+    const galleryItems = document.querySelectorAll(".gallery-item")
     galleryItems.forEach(item => item.remove());
 }
 
 // function to show all gallery items
 function showAllGallery() {
-    removeCurrent();
+    removeCurrentGalleryItems();
     picturesCurrentlyBeingDisplayed = allGalleryPictures;
     if (sortingOrder === "oldest first") {
-        allGalleryPictures.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+        allGalleryPictures.sort((a, b) => new Date(a.date) - new Date(b.date));
     } else {
-        allGalleryPictures.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        allGalleryPictures.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
     allGalleryPictures.forEach(picture => createGalleryItem(picture))
     console.log("All " + document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder);
@@ -125,13 +127,13 @@ function showAllGallery() {
 
 // function to show gallery items only by Viltaute
 function filterByViltaute() {
-    removeCurrent();
+    removeCurrentGalleryItems();
     let picturesByViltaute = allGalleryPictures.filter(picture => picture.authorEN === "Viltaute");
     picturesCurrentlyBeingDisplayed = picturesByViltaute;
     if (sortingOrder === "oldest first") {
-        picturesByViltaute.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+        picturesByViltaute.sort((a, b) => new Date(a.date) - new Date(b.date));
     } else {
-        picturesByViltaute.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        picturesByViltaute.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
     picturesByViltaute.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " pictures by Viltaute are being shown, " + sortingOrder);
@@ -139,13 +141,13 @@ function filterByViltaute() {
 
 // function to show gallery items only by Jogaile
 function filterByJogaile() {
-    removeCurrent();
+    removeCurrentGalleryItems();
     let picturesByJogaile = allGalleryPictures.filter(picture => picture.authorEN === "Jogaile");
     picturesCurrentlyBeingDisplayed = picturesByJogaile;
     if (sortingOrder === "oldest first") {
-        picturesByJogaile.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+        picturesByJogaile.sort((a, b) => new Date(a.date) - new Date(b.date));
     } else {
-        picturesByJogaile.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        picturesByJogaile.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
     picturesByJogaile.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " pictures by Jogaile are being shown, " + sortingOrder);
@@ -153,14 +155,13 @@ function filterByJogaile() {
 
 // function to show only cardboard gallery items
 function filterByCardboard() {
-    removeCurrent();
-
+    removeCurrentGalleryItems();
     let cardboardPictures = allGalleryPictures.filter(picture => picture.typeEN === "cardboard");
     picturesCurrentlyBeingDisplayed = cardboardPictures;
     if (sortingOrder === "oldest first") {
-        cardboardPictures.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+        cardboardPictures.sort((a, b) => new Date(a.date) - new Date(b.date));
     } else {
-        cardboardPictures.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+        cardboardPictures.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
     cardboardPictures.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " cardboard pictures are being shown, " + sortingOrder);
@@ -212,8 +213,8 @@ filterOptionsLT.addEventListener("change", filterResultLT);
 
 // function to sort current gallery items by date, newest to oldest
 const sortByDateNewestFirst = () => {
-    removeCurrent();
-    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(b.dateAdded) - new Date(a.dateAdded));
+    removeCurrentGalleryItems();
+    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(b.date) - new Date(a.date));
     sortingOrder = "newest first";
     picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder)
@@ -221,8 +222,8 @@ const sortByDateNewestFirst = () => {
 
 // function to sort current gallery items by date, oldest to newest
 const sortByDateOldestFirst = () => {
-    removeCurrent();
-    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(a.dateAdded) - new Date(b.dateAdded));
+    removeCurrentGalleryItems();
+    picturesCurrentlyBeingDisplayed.sort((a, b) => new Date(a.date) - new Date(b.date));
     sortingOrder = "oldest first";
     picturesCurrentlyBeingDisplayed.forEach(picture => createGalleryItem(picture));
     console.log(document.querySelectorAll(".gallery-item").length + " pictures are being shown, " + sortingOrder)
@@ -261,3 +262,64 @@ sortOptionsLT.addEventListener("change", sortingResultLT);
 
 //* search
 
+// input fields
+const inputFieldEN = document.getElementById("input-field-EN");
+const inputFieldLT = document.getElementById("input-field-LT");
+
+// search queries
+
+// function to search 
+function searchResultEN() {
+    removeCurrentGalleryItems();
+    const searchQueryEN = inputFieldEN.value;
+    let searchMatchesEN = picturesCurrentlyBeingDisplayed.filter(picture =>
+            (picture.authorEN && picture.authorEN.toLowerCase().includes(searchQueryEN.toLowerCase())) ||
+            (picture.titleEN && picture.titleEN.toLowerCase().includes(searchQueryEN.toLowerCase())) || 
+            (picture.methodEN && picture.methodEN.toLowerCase().includes(searchQueryEN.toLowerCase()))
+    )
+    searchMatchesEN.forEach(picture => createGalleryItem(picture));
+    console.log("Search for " + '"' + searchQueryEN + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+}
+
+function searchResultLT() {
+    removeCurrentGalleryItems();
+    const searchQueryLT = inputFieldLT.value;
+    let searchMatchesLT = picturesCurrentlyBeingDisplayed.filter(picture =>
+            (picture.authorLT && picture.authorLT.toLowerCase().includes(searchQueryLT.toLowerCase())) ||
+            (picture.titleLT && picture.titleLT.toLowerCase().includes(searchQueryLT.toLowerCase())) || 
+            (picture.methodLT && picture.methodLT.toLowerCase().includes(searchQueryLT.toLowerCase()))
+    )
+    searchMatchesLT.forEach(picture => createGalleryItem(picture));
+    console.log("Search for " + '"' + searchQueryLT + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+}
+
+inputFieldEN.addEventListener("input", searchResultEN)
+inputFieldLT.addEventListener("input", searchResultLT)
+
+
+
+// function searchResultEN() {
+//     const galleryItemsArray = Array.from(document.querySelectorAll(".gallery-item"));
+//     galleryItemsArray.forEach(item => {
+//         const englishCaption = item.querySelector("[data-language='en']").innerText.toLowerCase();
+//         const textInputEN = inputFieldEN.value.toLowerCase();
+//         if (englishCaption.includes(textInputEN)) {
+//             item.style.display = "block"
+//         } else {
+//             item.style.display = "none"
+//     }   
+//     })
+// }
+
+// function searchResultLT() {
+//     const galleryItemsArray = Array.from(document.querySelectorAll(".gallery-item"));
+//     galleryItemsArray.forEach(item => {
+//         const lithuanianCaption = item.querySelector("[data-language='lt']").innerText.toLowerCase();
+//         const textInputLT = inputFieldLT.value.toLowerCase();
+//         if (lithuanianCaption.includes(textInputLT)) {
+//             item.style.display = "block"
+//         } else {
+//             item.style.display = "none"
+//     }   
+//     })
+// }

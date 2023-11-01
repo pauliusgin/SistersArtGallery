@@ -270,10 +270,10 @@ document.addEventListener("click", hideSortingOnClickOutside);
 
 const openSearchButton = document.querySelector(".open-search-button");
 const closeSearchButton = document.querySelector(".close-search-button");
-const theSearch = document.querySelector(".input-field");
-const theSearchInputEN = document.getElementById("search-field-EN");
-const theSearchInputLT = document.getElementById("search-field-LT");
-const theSearchInputButton = document.getElementById("search-field-button")
+const theSearch = document.querySelector(".search-field");
+const theSearchInputEN = document.getElementById("input-field-EN");
+const theSearchInputLT = document.getElementById("input-field-LT");
+const theSearchInputButton = document.getElementById("input-field-button")
 
 // function to show the search field
 function showSearch() {
@@ -371,11 +371,11 @@ function searchOnScreenResize() {
     theSearch.style.display = "flex";
     openSearchButton.style.display = "none";
     closeSearchButton.style.display = "none";
-    if (screenWidth < 1300 && !document.activeElement.classList.contains("search-field")) {
+    if (screenWidth < 1300 && !document.activeElement.classList.contains("input-field")) {
         theSearch.style.display = "none";
         openSearchButton.style.display = "block";
         closeSearchButton.style.display = "none";
-    } else if (screenWidth < 1300 && document.activeElement.classList.contains("search-field")) {
+    } else if (screenWidth < 1300 && document.activeElement.classList.contains("input-field")) {
         theSearch.style.display = "flex";
         openSearchButton.style.display = "none";
         closeSearchButton.style.display = "block";
