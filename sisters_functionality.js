@@ -19,8 +19,6 @@ languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
 languageButtonEN.addEventListener("click", () => switchLanguage("en"));
 
 // determining language when loading gallery images
-const theGallery = document.getElementById("div-gallery-items");
-
 const mutationObserver = new MutationObserver( () => {
     const lithuanianLanguageSelected = window.getComputedStyle(languageButtonEN).display;
         if (lithuanianLanguageSelected === "block") {
@@ -28,6 +26,7 @@ const mutationObserver = new MutationObserver( () => {
     }
 })
 
+const theGallery = document.getElementById("div-gallery-items");
 mutationObserver.observe(theGallery, {childList: true})
 
 
@@ -296,30 +295,3 @@ function searchResultLT() {
 inputFieldEN.addEventListener("input", searchResultEN)
 inputFieldLT.addEventListener("input", searchResultLT)
 
-
-
-// function searchResultEN() {
-//     const galleryItemsArray = Array.from(document.querySelectorAll(".gallery-item"));
-//     galleryItemsArray.forEach(item => {
-//         const englishCaption = item.querySelector("[data-language='en']").innerText.toLowerCase();
-//         const textInputEN = inputFieldEN.value.toLowerCase();
-//         if (englishCaption.includes(textInputEN)) {
-//             item.style.display = "block"
-//         } else {
-//             item.style.display = "none"
-//     }   
-//     })
-// }
-
-// function searchResultLT() {
-//     const galleryItemsArray = Array.from(document.querySelectorAll(".gallery-item"));
-//     galleryItemsArray.forEach(item => {
-//         const lithuanianCaption = item.querySelector("[data-language='lt']").innerText.toLowerCase();
-//         const textInputLT = inputFieldLT.value.toLowerCase();
-//         if (lithuanianCaption.includes(textInputLT)) {
-//             item.style.display = "block"
-//         } else {
-//             item.style.display = "none"
-//     }   
-//     })
-// }
