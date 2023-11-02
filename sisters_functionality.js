@@ -13,8 +13,6 @@ function switchLanguage(lang) {
             element.style.display = "none";
         }
     });
-    inputFieldEN.value = "";
-    inputFieldLT.value = "";
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
@@ -269,28 +267,30 @@ const inputFieldLT = document.getElementById("input-field-LT");
 // search queries
 
 // function to search 
+
+
 function searchResultEN() {
     removeCurrentGalleryItems();
-    const searchQueryEN = inputFieldEN.value;
-    let searchMatchesEN = picturesCurrentlyBeingDisplayed.filter(picture =>
-            (picture.authorEN && picture.authorEN.toLowerCase().includes(searchQueryEN.toLowerCase())) ||
-            (picture.titleEN && picture.titleEN.toLowerCase().includes(searchQueryEN.toLowerCase())) || 
-            (picture.methodEN && picture.methodEN.toLowerCase().includes(searchQueryEN.toLowerCase()))
+    const searchQuery = inputFieldEN.value;
+    let searchMatches = picturesCurrentlyBeingDisplayed.filter(picture =>
+            (picture.authorEN && picture.authorEN.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (picture.titleEN && picture.titleEN.toLowerCase().includes(searchQuery.toLowerCase())) || 
+            (picture.methodEN && picture.methodEN.toLowerCase().includes(searchQuery.toLowerCase()))
     )
-    searchMatchesEN.forEach(picture => createGalleryItem(picture));
-    console.log("Search for " + '"' + searchQueryEN + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+    searchMatches.forEach(picture => createGalleryItem(picture));
+    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
 }
 
 function searchResultLT() {
     removeCurrentGalleryItems();
-    const searchQueryLT = inputFieldLT.value;
-    let searchMatchesLT = picturesCurrentlyBeingDisplayed.filter(picture =>
-            (picture.authorLT && picture.authorLT.toLowerCase().includes(searchQueryLT.toLowerCase())) ||
-            (picture.titleLT && picture.titleLT.toLowerCase().includes(searchQueryLT.toLowerCase())) || 
-            (picture.methodLT && picture.methodLT.toLowerCase().includes(searchQueryLT.toLowerCase()))
+    const searchQuery = inputFieldLT.value;
+    let searchMatches = picturesCurrentlyBeingDisplayed.filter(picture =>
+            (picture.authorLT && picture.authorLT.toLowerCase().includes(searchQuery.toLowerCase())) ||
+            (picture.titleLT && picture.titleLT.toLowerCase().includes(searchQuery.toLowerCase())) || 
+            (picture.methodLT && picture.methodLT.toLowerCase().includes(searchQuery.toLowerCase()))
     )
-    searchMatchesLT.forEach(picture => createGalleryItem(picture));
-    console.log("Search for " + '"' + searchQueryLT + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+    searchMatches.forEach(picture => createGalleryItem(picture));
+    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
 }
 
 inputFieldEN.addEventListener("input", searchResultEN)
