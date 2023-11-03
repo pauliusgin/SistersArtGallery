@@ -54,7 +54,6 @@ function createGalleryItem(picture) {
     const authorEN = picture.authorEN ? `${picture.authorEN}, ${picture.age} y/o, ` : "";
     const authorLT = picture.authorLT ? `${picture.authorLT}, ${picture.age} m., ` : "";
     
-
     // check if title has a valid value
     const titleEN = picture.titleEN ? `${picture.titleEN}` : "";
     const titleLT = picture.titleLT ? `${picture.titleLT}` : "";
@@ -263,11 +262,7 @@ sortOptionsLT.addEventListener("change", sortingResultLT);
 const inputFieldEN = document.getElementById("input-field-EN");
 const inputFieldLT = document.getElementById("input-field-LT");
 
-// search queries
-
-// function to search 
-
-
+// function to search for and display items matching the search
 function searchResultEN() {
     removeCurrentGalleryItems();
     const searchQuery = inputFieldEN.value;
@@ -292,6 +287,7 @@ function searchResultLT() {
     console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
 }
 
+// event listeners
 inputFieldEN.addEventListener("input", searchResultEN)
 inputFieldLT.addEventListener("input", searchResultLT)
 
