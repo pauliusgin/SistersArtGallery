@@ -195,6 +195,7 @@ figcaption {
 
 #empty-gallery {
   width: 100%;
+  display: none;
 }
   
   #empty-gallery p {
