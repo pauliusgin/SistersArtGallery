@@ -71,6 +71,37 @@ function createGalleryItem(picture) {
     figure.appendChild(figcaptionLT);
 } 
 
+// function to calculate child's age at the time the drawing was made
+
+// const ageAtTheTimeOfDrawing = (picture) => {
+//     const viltauteDOB = new Date("2020-10-14");
+//     const jogaileDOB = new Date("2022-06-10");
+//     const dateOfDrawing = new Date(picture.date);
+
+//     const authorDOB = () => {
+//         if (picture.authorEN === "Viltaute") {
+//             return dateOfDrawing - viltauteDOB;
+//         } else if (picture.authorEN === "Jogaile") {
+//             return dateOfDrawing - jogaileDOB;
+//         }
+//     }
+
+//     let authorAge = dateOfDrawing - authorDOB;
+
+//     if (picture.authorEN === "Viltaute") {
+//         return dateOfDrawing - viltauteDOB;
+//     } else if (picture.authorEN === "Jogaile") {
+//         return dateOfDrawing - jogaileDOB;
+//     } else {
+//         return ""
+//     }
+
+// }
+
+
+
+
+
 //* global variables below
 //* ----------------------
 // keep the fetched json object

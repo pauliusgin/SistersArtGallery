@@ -2,6 +2,58 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "African Tortoise",
+        "titleLT": "Afrikinis Vėžlys",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-afrikinis-vezlys-web.jpg",
+        "date": "2023-06-30"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "Games",
+        "titleLT": "Žaidimai",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-07-23-viltaute-zaidimai-web.jpg",
+        "date": "2023-07-23"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 2,
+        "titleEN": "Torch",
+        "titleLT": "Fakelas",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-07-25-viltaute-fakelas-web.jpg",
+        "date": "2023-07-25"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
+        "age": 3,
+        "titleEN": "Self-Portrait",
+        "titleLT": "Autoportretas",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "crayons",
+        "methodLT": "kreidelės",
+        "url": "gallery items/Gallery items drawings/2023-10-23-viltaute-autoportretas2-web.jpg",
+        "date": "2023-10-23"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
         "age": 3,
         "titleEN": "Cat",
         "titleLT": "Katė",
@@ -35,8 +87,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-veidas-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-21-viltaute-autoportretas-web.jpg",
+        "date": "2023-09-21"
     },
     {
         "authorEN": "Viltaute",
@@ -48,8 +100,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-seima-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-21-viltaute-seima-web.jpg",
+        "date": "2023-09-21"
     },
     {
         "authorEN": "Viltaute",
@@ -61,8 +113,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-ruduo-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-11-viltaute-ruduo-web.jpg",
+        "date": "2023-09-11"
     },
     {
         "authorEN": "Viltaute",
@@ -74,8 +126,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-riteris-ir-slibinas-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-08-viltaute-riteris-ir-slibinas-web.jpg",
+        "date": "2023-09-08"
     },
     {
         "authorEN": "Viltaute",
@@ -87,8 +139,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-plaukia-zuvis-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-08-viltaute-plaukia-zuvis-web.jpg",
+        "date": "2023-09-08"
     },
     {
         "authorEN": "Viltaute",
@@ -100,8 +152,8 @@
         "typeLT": "piešinys",
         "methodEN": "felt-tip pen",
         "methodLT": "flomasteriai",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-namas-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-12-viltaute-namas-web.jpg",
+        "date": "2023-09-12"
     },
     {
         "authorEN": "Viltaute",
@@ -113,8 +165,8 @@
         "typeLT": "piešinys",
         "methodEN": "felt-tip pen",
         "methodLT": "flomasteriai",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-laivas-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-25-viltaute-laivas-web.jpg",
+        "date": "2023-09-25"
     },
     {
         "authorEN": "Viltaute",
@@ -126,8 +178,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-laivas-juroje-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-08-viltaute-laivas-juroje-web.jpg",
+        "date": "2023-09-08"
     },
     {
         "authorEN": "Viltaute",
@@ -139,8 +191,8 @@
         "typeLT": "piešinys",
         "methodEN": "felt-tip pen",
         "methodLT": "flomasteriai",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-dinozauras-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-12-viltaute-dinozauras-web.jpg",
+        "date": "2023-09-12"
     },
     {
         "authorEN": "Viltaute",
@@ -165,8 +217,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-09-01-viltaute-balionai-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-11-viltaute-balionai-web.jpg",
+        "date": "2023-09-11"
     },
     {
         "authorEN": "Viltaute",
@@ -191,8 +243,8 @@
         "typeLT": "piešinys",
         "methodEN": "felt-tip pen",
         "methodLT": "flomasteriai",
-        "url": "gallery items/Gallery items drawings/2023-09-01-jogaile-daleliu-judejimas2-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-11-jogaile-daleliu-judejimas2-web.jpg",
+        "date": "2023-09-11"
     },
     {
         "authorEN": "Jogaile",
@@ -204,8 +256,21 @@
         "typeLT": "piešinys",
         "methodEN": "felt-tip pen",
         "methodLT": "flomasteriai",
-        "url": "gallery items/Gallery items drawings/2023-09-01-jogaile-daleliu-judejimas-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-08-jogaile-daleliu-judejimas-web.jpg",
+        "date": "2023-09-08"
+    },
+    {
+        "authorEN": "Jogaile",
+        "authorLT": "Jogailė",
+        "age": 1,
+        "titleEN": "No Title",
+        "titleLT": "Be Pavadinimo",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "felt-tip pen",
+        "methodLT": "flomasteriai",
+        "url": "gallery items/Gallery items drawings/2023-09-25-jogaile-be-pavadinimo3-web.jpg",
+        "date": "2023-09-25"
     },
     {
         "authorEN": "Jogaile",
@@ -217,8 +282,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-09-01-jogaile-be-pavadinimo3-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-11-jogaile-be-pavadinimo2-web.jpg",
+        "date": "2023-09-11"
     },
     {
         "authorEN": "Jogaile",
@@ -230,21 +295,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-09-01-jogaile-be-pavadinimo2-web.jpg",
-        "date": "2023-09-01"
-    },
-    {
-        "authorEN": "Jogaile",
-        "authorLT": "Jogailė",
-        "age": 1,
-        "titleEN": "No Title",
-        "titleLT": "Be Pavadinimo",
-        "typeEN": "drawing",
-        "typeLT": "piešinys",
-        "methodEN": "fingerpaint",
-        "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-09-01-jogaile-be-pavadinimo-web.jpg",
-        "date": "2023-09-01"
+        "url": "gallery items/Gallery items drawings/2023-09-12-jogaile-be-pavadinimo-web.jpg",
+        "date": "2023-09-12"
     },
     {
         "authorEN": null,
@@ -269,8 +321,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-an-alpaca-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-an-alpaca-web.jpg",
+        "date": "2023-06-30"
     },
     {   
         "authorEN": "Viltaute",
@@ -282,8 +334,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-everything-all-at-once-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-everything-all-at-once-web.jpg",
+        "date": "2023-06-30"
     },
     {   
         "authorEN": "Viltaute",
@@ -295,8 +347,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-feeling-confused-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-feeling-confused-web.jpg",
+        "date": "2023-06-30"
     },
     {   
         "authorEN": "Viltaute",
@@ -308,8 +360,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-feeling-fishy-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-feeling-fishy-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -321,8 +373,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-fishing-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-fishing-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -334,8 +386,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-happy-abstraction-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-happy-abstraction-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -347,8 +399,8 @@
         "typeLT": "koliažas",
         "methodEN": "paper",
         "methodLT": "popierius",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-m-is-for-mom-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-m-is-for-mom-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -360,8 +412,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-meadow-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-meadow-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -373,8 +425,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-meadow2-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-meadow2-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -386,8 +438,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-meadow3-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-meadow3-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -399,8 +451,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-meadow4-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-meadow4-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -412,8 +464,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-playing-with-water-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-playing-with-water-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -425,8 +477,8 @@
         "typeLT": "koliažas",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-a-sheep-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2022-08-15-viltaute-a-sheep-web.jpg",
+        "date": "2022-08-15"
     },
     {
         "authorEN": "Viltaute",
@@ -438,8 +490,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-sun-bunny-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-sun-bunny-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -451,8 +503,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-sunny-day-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-sunny-day-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -464,8 +516,8 @@
         "typeLT": "koliažas",
         "methodEN": "paper",
         "methodLT": "popierius",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-the-horse-is-hiding-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-the-horse-is-hiding-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -477,8 +529,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-whirlwind-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-whirlwind-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -490,8 +542,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-07-01-viltaute-wild-strawberries-web.jpg",
-        "date": "2023-07-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-wild-strawberries-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Jogaile",
@@ -503,8 +555,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-08-01-jogaile-the-first-one-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-08-04-jogaile-the-first-one-web.jpg",
+        "date": "2023-08-04"
     },
     {
         "authorEN": "Viltaute",
@@ -516,8 +568,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-beetroot-soup-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-08-17-viltaute-beetroot-soup-web.jpg",
+        "date": "2023-08-17"
     },
     {
         "authorEN": "Viltaute",
@@ -529,8 +581,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-birds-flight-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-birds-flight-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -542,8 +594,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-fruits-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-08-17-viltaute-fruits-web.jpg",
+        "date": "2023-08-17"
     },
     {
         "authorEN": "Viltaute",
@@ -555,8 +607,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-ice-cream-hills-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-14-viltaute-ice-cream-hills-web.jpg",
+        "date": "2023-07-14"
     },
     {
         "authorEN": "Viltaute",
@@ -568,8 +620,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-meadow-at-night-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-06-viltaute-meadow-at-night-web.jpg",
+        "date": "2023-07-06"
     },
     {
         "authorEN": "Viltaute",
@@ -581,8 +633,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-my-kite-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-06-viltaute-my-kite-web.jpg",
+        "date": "2023-07-06"
     },
     {
         "authorEN": "Viltaute",
@@ -594,8 +646,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-patterns-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-06-viltaute-patterns-web.jpg",
+        "date": "2023-07-06"
     },
     {
         "authorEN": "Viltaute",
@@ -607,8 +659,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-patterns2-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-06-viltaute-patterns2-web.jpg",
+        "date": "2023-07-06"
     },
     {
         "authorEN": "Viltaute",
@@ -620,8 +672,8 @@
         "typeLT": "piešinys",
         "methodEN": "crayons",
         "methodLT": "kreidelės",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-patterns3-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2022-02-20-viltaute-patterns3-web.jpg",
+        "date": "2022-02-20"
     },
     {
         "authorEN": "Viltaute",
@@ -633,8 +685,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-peaking-bear-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-peaking-bear-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -646,8 +698,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-sunny-beach-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-06-30-viltaute-sunny-beach-web.jpg",
+        "date": "2023-06-30"
     },
     {
         "authorEN": "Viltaute",
@@ -659,8 +711,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-the-fight-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-19-viltaute-the-fight-web.jpg",
+        "date": "2023-07-19"
     },
     {
         "authorEN": "Viltaute",
@@ -685,8 +737,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-the-hierarchy-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-14-viltaute-the-hierarchy-web.jpg",
+        "date": "2023-07-14"
     },
     {
         "authorEN": "Viltaute",
@@ -698,8 +750,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-the-labyrinth-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-14-viltaute-the-labyrinth-web.jpg",
+        "date": "2023-07-14"
     },
     {
         "authorEN": "Viltaute",
@@ -711,8 +763,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-the-sea-is-huge-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-06-viltaute-the-sea-is-huge-web.jpg",
+        "date": "2023-07-06"
     },
     {
         "authorEN": "Viltaute",
@@ -724,8 +776,8 @@
         "typeLT": "piešinys",
         "methodEN": "watercolor",
         "methodLT": "akvarelė",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-walking-with-an-umbrella-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-08-17-viltaute-walking-with-an-umbrella-web.jpg",
+        "date": "2023-08-17"
     },
     {
         "authorEN": "Viltaute",
@@ -737,8 +789,8 @@
         "typeLT": "piešinys",
         "methodEN": "fingerpaint",
         "methodLT": "piešimas pirštais",
-        "url": "gallery items/Gallery items drawings/2023-08-01-viltaute-windy-shenanigans-web.jpg",
-        "date": "2023-08-01"
+        "url": "gallery items/Gallery items drawings/2023-07-14-viltaute-windy-shenanigans-web.jpg",
+        "date": "2023-07-14"
     },
     {
         "authorEN": null,
@@ -1012,11 +1064,5 @@
         "methodLT": "guašas",
         "url": "gallery items/Gallery items cardboard/2023-08-01-cardboard-peacock-web.jpg",
         "date": "2023-08-01"
-    },
-    {
-        "dateOfBirth": {
-            "Viltaute": "2020-10-14",
-            "Jogaile": "2022-06-10"
-        }
     }
 ]
