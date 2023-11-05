@@ -2,7 +2,18 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
+        "titleEN": "Happy Feet",
+        "titleLT": "Linksmosios Pėdutės",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "fingerpaint",
+        "methodLT": "piešimas pirštais",
+        "url": "gallery items/Gallery items drawings/2023-11-04-viltaute-linksmosios-pedutes-web.jpg",
+        "date": "2023-11-04"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
         "titleEN": "African Tortoise",
         "titleLT": "Afrikinis Vėžlys",
         "typeEN": "drawing",
@@ -15,7 +26,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Games",
         "titleLT": "Žaidimai",
         "typeEN": "drawing",
@@ -28,7 +38,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Torch",
         "titleLT": "Fakelas",
         "typeEN": "drawing",
@@ -41,7 +50,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 3,
         "titleEN": "Self-Portrait",
         "titleLT": "Autoportretas",
         "typeEN": "drawing",
@@ -54,7 +62,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 3,
         "titleEN": "Cat",
         "titleLT": "Katė",
         "typeEN": "cardboard",
@@ -67,7 +74,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Marshmallow Face",
         "titleLT": "Zefyrinis Veidukas",
         "typeEN": "drawing",
@@ -80,7 +86,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Self-Portrait",
         "titleLT": "Autoportretas",
         "typeEN": "drawing",
@@ -93,7 +98,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Family",
         "titleLT": "Šeima",
         "typeEN": "drawing",
@@ -106,7 +110,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Autumn",
         "titleLT": "Ruduo",
         "typeEN": "drawing",
@@ -119,7 +122,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "A Knight And A Dragon",
         "titleLT": "Riteris Ir Slibinas",
         "typeEN": "drawing",
@@ -132,7 +134,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Fish Is Swimming",
         "titleLT": "Žuvis Plaukia",
         "typeEN": "drawing",
@@ -145,7 +146,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "House",
         "titleLT": "Namas",
         "typeEN": "drawing",
@@ -158,7 +158,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Ship",
         "titleLT": "Laivas",
         "typeEN": "drawing",
@@ -171,7 +170,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Ship In A Sea",
         "titleLT": "Laivas Jūroje",
         "typeEN": "drawing",
@@ -184,7 +182,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Dinosaur",
         "titleLT": "Dinozauras",
         "typeEN": "drawing",
@@ -197,7 +194,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "No Title",
         "titleLT": "Be Pavadinimo",
         "typeEN": "drawing",
@@ -210,7 +206,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Hot Air Balloons",
         "titleLT": "Oro Balionai",
         "typeEN": "drawing",
@@ -223,7 +218,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Storm Without A Teacup",
         "titleLT": "Audra Be Stiklinės",
         "typeEN": "drawing",
@@ -236,7 +230,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "Particle Movement 2",
         "titleLT": "Dalelių Judėjimas 2",
         "typeEN": "drawing",
@@ -249,7 +242,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "Particle Movement",
         "titleLT": "Dalelių Judėjimas",
         "typeEN": "drawing",
@@ -262,7 +254,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "No Title",
         "titleLT": "Be Pavadinimo",
         "typeEN": "drawing",
@@ -275,7 +266,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "No Title",
         "titleLT": "Be Pavadinimo",
         "typeEN": "drawing",
@@ -288,7 +278,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "No Title",
         "titleLT": "Be Pavadinimo",
         "typeEN": "drawing",
@@ -301,7 +290,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Snake",
         "titleLT": "Gyvatė",
         "typeEN": "cardboard",
@@ -314,7 +302,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "An Alpaca",
         "titleLT": "Alpaka",
         "typeEN": "drawing",
@@ -327,7 +314,6 @@
     {   
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Everything All At Once",
         "titleLT": "Viskas Iškart",
         "typeEN": "drawing",
@@ -340,7 +326,6 @@
     {   
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Feeling Confused",
         "titleLT": "Sutrikusi",
         "typeEN": "drawing",
@@ -353,7 +338,6 @@
     {   
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Feeling Fishy",
         "titleLT": "Kyla Įtarimas",
         "typeEN": "drawing",
@@ -366,7 +350,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Fishing",
         "titleLT": "Žvejyba",
         "typeEN": "drawing",
@@ -379,7 +362,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Happy Abstraction",
         "titleLT": "Linksma Abstrakcija",
         "typeEN": "drawing",
@@ -392,7 +374,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "M Is For Mom",
         "titleLT": "M Reiškia Mamą",
         "typeEN": "collage",
@@ -405,7 +386,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Meadow",
         "titleLT": "Pieva",
         "typeEN": "drawing",
@@ -418,7 +398,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Meadow 2",
         "titleLT": "Pieva 2",
         "typeEN": "drawing",
@@ -431,7 +410,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Meadow 3",
         "titleLT": "Pieva 3",
         "typeEN": "drawing",
@@ -444,7 +422,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Meadow 4",
         "titleLT": "Pieva 4",
         "typeEN": "drawing",
@@ -457,7 +434,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Playing With Water",
         "titleLT": "Žaidimas Su Vandeniu",
         "typeEN": "drawing",
@@ -470,7 +446,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "A Sheep",
         "titleLT": "Avis",
         "typeEN": "collage",
@@ -483,7 +458,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Sun Bunny",
         "titleLT": "Saulės Zuikutis",
         "typeEN": "drawing",
@@ -496,7 +470,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Sunny Day",
         "titleLT": "Saulėta Diena",
         "typeEN": "drawing",
@@ -509,7 +482,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "The Horse Is Hiding",
         "titleLT": "Arklys Slepiasi",
         "typeEN": "collage",
@@ -522,7 +494,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Whirlwind",
         "titleLT": "Sūkurys",
         "typeEN": "drawing",
@@ -535,7 +506,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Wild Strawberries",
         "titleLT": "Žemuogės",
         "typeEN": "drawing",
@@ -548,7 +518,6 @@
     {
         "authorEN": "Jogaile",
         "authorLT": "Jogailė",
-        "age": 1,
         "titleEN": "The First One",
         "titleLT": "Pirmasis Piešinys",
         "typeEN": "drawing",
@@ -561,7 +530,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Cold Beetroot Soup",
         "titleLT": "Šaltibarščiai",
         "typeEN": "drawing",
@@ -574,7 +542,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Bird's Flight",
         "titleLT": "Paukščio Skrydis",
         "typeEN": "drawing",
@@ -587,7 +554,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Fruits",
         "titleLT": "Vaisiai",
         "typeEN": "drawing",
@@ -600,7 +566,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Ice Cream Hills",
         "titleLT": "Ledų Kalnai",
         "typeEN": "drawing",
@@ -613,7 +578,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Meadow At Night",
         "titleLT": "Pieva Naktį",
         "typeEN": "drawing",
@@ -626,7 +590,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "My Kite",
         "titleLT": "Mano Aitvaras",
         "typeEN": "drawing",
@@ -639,7 +602,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Patterns",
         "titleLT": "Raštai",
         "typeEN": "drawing",
@@ -652,7 +614,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Patterns 2",
         "titleLT": "Raštai 2",
         "typeEN": "drawing",
@@ -665,7 +626,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Patterns 3",
         "titleLT": "Raštai 3",
         "typeEN": "drawing",
@@ -678,7 +638,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Peaking Bear",
         "titleLT": "Meška Dairosi",
         "typeEN": "drawing",
@@ -691,7 +650,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Sunny Beach",
         "titleLT": "Saulėtas Paplūdimys",
         "typeEN": "drawing",
@@ -704,7 +662,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "The Fight",
         "titleLT": "Kova",
         "typeEN": "drawing",
@@ -717,7 +674,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 1,
         "titleEN": "The First One",
         "titleLT": "Pirmasis Piešinys",
         "typeEN": "drawing",
@@ -730,7 +686,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "The Hierarchy",
         "titleLT": "Hierarchija",
         "typeEN": "drawing",
@@ -743,7 +698,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "The Labyrinth",
         "titleLT": "Labirintas",
         "typeEN": "drawing",
@@ -756,7 +710,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "The Sea Is Huge",
         "titleLT": "Jūra Yra Milžiniška",
         "typeEN": "drawing",
@@ -769,7 +722,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Walking With An Umbrella",
         "titleLT": "Pasivaikščiojimas Su Skėčiu",
         "typeEN": "drawing",
@@ -782,7 +734,6 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
-        "age": 2,
         "titleEN": "Windy Shenanigans",
         "titleLT": "Vėjo Išdaigos",
         "typeEN": "drawing",
@@ -795,7 +746,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Car",
         "titleLT": "Mašina",
         "typeEN": "cardboard",
@@ -808,7 +758,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Giraffe",
         "titleLT": "Žirafa",
         "typeEN": "cardboard",
@@ -821,7 +770,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "House No. 1",
         "titleLT": "Namas Nr. 1",
         "typeEN": "cardboard",
@@ -834,7 +782,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "London Bus",
         "titleLT": "Londono Autobusas",
         "typeEN": "cardboard",
@@ -847,7 +794,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Monkey",
         "titleLT": "Beždžionė",
         "typeEN": "cardboard",
@@ -860,7 +806,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Ostrich",
         "titleLT": "Strutis",
         "typeEN": "cardboard",
@@ -873,7 +818,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Panda",
         "titleLT": "Panda",
         "typeEN": "cardboard",
@@ -886,7 +830,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Penguin Dad",
         "titleLT": "Pingvinas Tėtis",
         "typeEN": "cardboard",
@@ -899,7 +842,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Penguin Kid",
         "titleLT": "Pingvinas Vaikas",
         "typeEN": "cardboard",
@@ -912,7 +854,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Theater",
         "titleLT": "Teatras",
         "typeEN": "cardboard",
@@ -925,7 +866,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Theater 2",
         "titleLT": "Teatras 2",
         "typeEN": "cardboard",
@@ -938,7 +878,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Baby Elephant",
         "titleLT": "Mažylis Drambliukas",
         "typeEN": "cardboard",
@@ -951,7 +890,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Baby Lion",
         "titleLT": "Mažylis Liūtukas",
         "typeEN": "cardboard",
@@ -964,7 +902,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Bear",
         "titleLT": "Meška",
         "typeEN": "cardboard",
@@ -977,7 +914,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Bunny Mask",
         "titleLT": "Kiškio Kaukė",
         "typeEN": "cardboard",
@@ -990,7 +926,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Crocodile",
         "titleLT": "Krokodilas",
         "typeEN": "cardboard",
@@ -1003,7 +938,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Hedgehog",
         "titleLT": "Ežys",
         "typeEN": "cardboard",
@@ -1016,7 +950,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Lion Mask",
         "titleLT": "Liūto Kaukė",
         "typeEN": "cardboard",
@@ -1029,7 +962,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Monsters",
         "titleLT": "Pabaisos",
         "typeEN": "cardboard",
@@ -1042,7 +974,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Owl",
         "titleLT": "Pelėda",
         "typeEN": "cardboard",
@@ -1055,7 +986,6 @@
     {
         "authorEN": null,
         "authorLT": null,
-        "age": null,
         "titleEN": "Peacock",
         "titleLT": "Povas",
         "typeEN": "cardboard",

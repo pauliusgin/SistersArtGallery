@@ -38,29 +38,49 @@ function createGalleryItem(picture) {
     const galleryImage = document.createElement("img");
     const figcaptionEN = document.createElement("figcaption");
     const figcaptionLT = document.createElement("figcaption");
+    const span = document.createElement("span");
     
     // add classes and attributes to the elements
     figure.classList.add("gallery-item");
     galleryImage.classList.add("gallery-image");
     figcaptionEN.setAttribute("data-language", "en");
     figcaptionLT.setAttribute("data-language", "lt");
+    span.classList.add("figcaption-span");
 
     // add attributes to the pictures
     galleryImage.src = `${picture.url}`;
     galleryImage.alt = `${picture.titleEN}`;
     galleryImage.loading = "lazy";
     
-    // check if author has a valid value
-    const authorEN = picture.authorEN ? `${picture.authorEN}, ${picture.age} y/o, ` : "";
-    const authorLT = picture.authorLT ? `${picture.authorLT}, ${picture.age} m., ` : "";
+    // calculate the age of author at the time of drawing
+    const ageOfViltaute = Math.floor((new Date(picture.date) - new Date("2020-10-14")) / 1000 / 3600 / 24 / 365);
+    const ageOfJogaile = Math.floor((new Date(picture.date) - new Date("2022-06-10")) / 1000 / 3600 / 24 / 365);
     
-    // check if title has a valid value
-    const titleEN = picture.titleEN ? `${picture.titleEN}` : "";
-    const titleLT = picture.titleLT ? `${picture.titleLT}` : "";
+    // match age with the author
+    if (picture.authorEN === "Viltaute") {
+        ageOfAuthor = ageOfViltaute
+    } else if (picture.authorEN === "Jogaile") {
+        ageOfAuthor = ageOfJogaile
+    }
+    
+    // check if there is an author provided, add age if it is
+    const authorEN = picture.authorEN ? `${picture.authorEN} (${ageOfAuthor} y/o), ` : "";
+    const authorLT = picture.authorLT ? `${picture.authorLT} (${ageOfAuthor} m.), ` : "";
+    
+    // check if "title" has a valid value
+    const titleEN = picture.titleEN ? `"${picture.titleEN}"` : "";
+    const titleLT = picture.titleLT ? `"${picture.titleLT}"` : "";
+
+    // check if "method" has a valid value
+    const methodEN = picture.methodEN ? `${picture.methodEN.charAt(0).toUpperCase() + picture.methodEN.slice(1)}` : "";
+    const methodLT = picture.methodLT ? `${picture.methodLT.charAt(0).toUpperCase() + picture.methodLT.slice(1)}` : "";
+
+    //check if "date" has a valid value
+    const date = picture.date ? `${picture.date.replaceAll("-", " ")}` : "";
 
     // write the text into the figcaption
-    figcaptionEN.textContent = `${authorEN} ${titleEN}`;
-    figcaptionLT.textContent = `${authorLT} ${titleLT}`;
+    figcaptionEN.innerHTML = `${authorEN} ${titleEN} <br><span>${methodEN} | ${date}</span>`;
+    figcaptionLT.innerHTML = `${authorLT} ${titleLT} <br><span>${methodLT} | ${date}</span>`;
     
     // adding the elements to DOM
     const theGallery = document.getElementById("div-gallery-items");
@@ -69,22 +89,25 @@ function createGalleryItem(picture) {
     figure.appendChild(galleryImage);
     figure.appendChild(figcaptionEN);
     figure.appendChild(figcaptionLT);
+    figcaptionEN.appendChild(span);
+
 } 
 
 // function to calculate child's age at the time the drawing was made
 
 // const ageAtTheTimeOfDrawing = (picture) => {
+//     const dateOfDrawing = new Date(picture.date);
 //     const viltauteDOB = new Date("2020-10-14");
 //     const jogaileDOB = new Date("2022-06-10");
-//     const dateOfDrawing = new Date(picture.date);
+//     const viltauteAge = dateOfDrawing - viltauteDOB;
+//     const jogaileAge = dateOfDrawing - jogaileDOB;
 
-//     const authorDOB = () => {
-//         if (picture.authorEN === "Viltaute") {
-//             return dateOfDrawing - viltauteDOB;
-//         } else if (picture.authorEN === "Jogaile") {
-//             return dateOfDrawing - jogaileDOB;
-//         }
+//     if (picture.authorEN === "Viltaute") {
+//         return viltauteAge;
+//     } else if (picture.authorEN === "Jogaile") {
+//         return jogaileAge;
 //     }
+// }
 
 //     let authorAge = dateOfDrawing - authorDOB;
 
@@ -293,29 +316,48 @@ sortOptionsLT.addEventListener("change", sortingResultLT);
 const inputFieldEN = document.getElementById("input-field-EN");
 const inputFieldLT = document.getElementById("input-field-LT");
 
+// function to show a message that no items match a search query
+function noSearchResults() {
+    if (document.querySelectorAll(".gallery-item").length === 0) {
+        document.getElementById("empty-gallery").style.display = "block";
+    }
+}
+
 // function to search for and display items matching the search
 function searchResultEN() {
     removeCurrentGalleryItems();
-    const searchQuery = inputFieldEN.value;
-    let searchMatches = picturesCurrentlyBeingDisplayed.filter(picture =>
-            (picture.authorEN && picture.authorEN.toLowerCase().includes(searchQuery.toLowerCase())) ||
-            (picture.titleEN && picture.titleEN.toLowerCase().includes(searchQuery.toLowerCase())) || 
-            (picture.methodEN && picture.methodEN.toLowerCase().includes(searchQuery.toLowerCase()))
-    )
+    const searchQuery = inputFieldEN.value.split(" "); // returns an array of queries
+
+    let searchMatches = picturesCurrentlyBeingDisplayed;
+    
+    searchQuery.forEach(queryWord => {
+        searchMatches = searchMatches.filter(picture =>
+            (picture.authorEN && picture.authorEN.toLowerCase().includes(queryWord.toLowerCase())) ||
+            (picture.titleEN && picture.titleEN.toLowerCase().includes(queryWord.toLowerCase())) || 
+            (picture.methodEN && picture.methodEN.toLowerCase().includes(queryWord.toLowerCase()))
+            )
+        })
     searchMatches.forEach(picture => createGalleryItem(picture));
-    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.");
+    noSearchResults();
 }
 
 function searchResultLT() {
     removeCurrentGalleryItems();
-    const searchQuery = inputFieldLT.value;
-    let searchMatches = picturesCurrentlyBeingDisplayed.filter(picture =>
-            (picture.authorLT && picture.authorLT.toLowerCase().includes(searchQuery.toLowerCase())) ||
-            (picture.titleLT && picture.titleLT.toLowerCase().includes(searchQuery.toLowerCase())) || 
-            (picture.methodLT && picture.methodLT.toLowerCase().includes(searchQuery.toLowerCase()))
-    )
+    const searchQuery = inputFieldLT.value.split(" ");
+
+    let searchMatches = picturesCurrentlyBeingDisplayed;
+
+    searchQuery.forEach(queryWord => {
+        searchMatches = searchMatches.filter(picture =>
+            (picture.authorLT && picture.authorLT.toLowerCase().includes(queryWord.toLowerCase())) ||
+            (picture.titleLT && picture.titleLT.toLowerCase().includes(queryWord.toLowerCase())) || 
+            (picture.methodLT && picture.methodLT.toLowerCase().includes(queryWord.toLowerCase()))
+            )
+        })
     searchMatches.forEach(picture => createGalleryItem(picture));
-    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.")
+    console.log("Search for " + '"' + searchQuery + '"' + " returned " + document.querySelectorAll(".gallery-item").length + " pictures.");
+    noSearchResults();
 }
 
 // event listeners
