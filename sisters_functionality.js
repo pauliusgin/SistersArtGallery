@@ -30,6 +30,17 @@ const theGallery = document.getElementById("div-gallery-items");
 mutationObserver.observe(theGallery, {childList: true})
 
 
+
+// todo below this line -----------------------------------------------
+
+//* Language cookie
+
+// document.cookie = "language=${lang}; expires=Sun, 31 Dec, 2024 23:59:59 UTC, path=/"
+
+//  todo above this line ----------------------------------------------
+
+
+
 //* fetching .json and creating a gallery of pictures from it 
 
 // function to create a gallery item in DOM from a .json object
@@ -363,4 +374,3 @@ function searchResultLT() {
 // event listeners
 inputFieldEN.addEventListener("input", searchResultEN)
 inputFieldLT.addEventListener("input", searchResultLT)
-

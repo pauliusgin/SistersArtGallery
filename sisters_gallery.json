@@ -2,6 +2,30 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
+        "titleEN": "Rainbow",
+        "titleLT": "Vaivorykštė",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-11-06-viltaute-vaivorykste-web.jpg",
+        "date": "2023-11-06"
+    },
+    {
+        "authorEN": "Jogaile",
+        "authorLT": "Jogailė",
+        "titleEN": "Mushrooms",
+        "titleLT": "Grybai",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-11-06-jogaile-grybai-web.jpg",
+        "date": "2023-11-06"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
         "titleEN": "Happy Feet",
         "titleLT": "Linksmosios Pėdutės",
         "typeEN": "drawing",
