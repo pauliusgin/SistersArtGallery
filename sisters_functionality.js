@@ -13,6 +13,7 @@ function switchLanguage(lang) {
             element.style.display = "none";
         }
     });
+    createLanguageCookie(lang, 100)
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
@@ -30,15 +31,33 @@ const theGallery = document.getElementById("div-gallery-items");
 mutationObserver.observe(theGallery, {childList: true})
 
 
-
-// todo below this line -----------------------------------------------
-
 //* Language cookie
 
-// document.cookie = "language=${lang}; expires=Sun, 31 Dec, 2024 23:59:59 UTC, path=/"
+// function to create a cookie to remember a selected language
+function createLanguageCookie(lang, daysToLive) {
+    let currentLanguageCookie = document.cookie
+        .split('; ')
+        .find(cookie => cookie.startsWith('language='));
 
-//  todo above this line ----------------------------------------------
+    if (currentLanguageCookie) {
+        document.cookie = `${currentLanguageCookie}; expires=${new Date(0).toUTCString()}; path=/`;
+    }
 
+    let currentDateInMs = new Date().getTime();
+    let expDateInMs = daysToLive * 24 * 3600 * 1000;
+    let expDate = new Date(currentDateInMs + expDateInMs).toUTCString();
+    document.cookie = `language=${lang}; expires=${expDate}; path=/ `
+}
+
+// function to check for the cookie value on page load
+function checkLanguageCookie() {
+    let languageCookie = document.cookie.split(";").find(cookie => cookie.startsWith("language="));
+    let languageCookieValue = languageCookie.replace("language=", "");
+    if (languageCookieValue === "lt") {
+        switchLanguage("lt")
+    }
+}
+document.addEventListener("DOMContentLoaded", checkLanguageCookie);
 
 
 //* fetching .json and creating a gallery of pictures from it 
