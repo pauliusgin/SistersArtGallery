@@ -23,10 +23,8 @@ function hideMenu() {
 
 // todo fix this below
 // function to prevent "click" when "touch" event is detected
-function preventClick(event) {
-        isTouchDevice = true;
-        event.preventDefault();
-        isTouchDevice = false;
+function preventClick() {
+    console.log("click")        
 }
 
 // function to show the menu with a touch

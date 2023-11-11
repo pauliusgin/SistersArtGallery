@@ -123,37 +123,6 @@ function createGalleryItem(picture) {
 
 } 
 
-// function to calculate child's age at the time the drawing was made
-
-// const ageAtTheTimeOfDrawing = (picture) => {
-//     const dateOfDrawing = new Date(picture.date);
-//     const viltauteDOB = new Date("2020-10-14");
-//     const jogaileDOB = new Date("2022-06-10");
-//     const viltauteAge = dateOfDrawing - viltauteDOB;
-//     const jogaileAge = dateOfDrawing - jogaileDOB;
-
-//     if (picture.authorEN === "Viltaute") {
-//         return viltauteAge;
-//     } else if (picture.authorEN === "Jogaile") {
-//         return jogaileAge;
-//     }
-// }
-
-//     let authorAge = dateOfDrawing - authorDOB;
-
-//     if (picture.authorEN === "Viltaute") {
-//         return dateOfDrawing - viltauteDOB;
-//     } else if (picture.authorEN === "Jogaile") {
-//         return dateOfDrawing - jogaileDOB;
-//     } else {
-//         return ""
-//     }
-
-// }
-
-
-
-
 
 //* global variables below
 //* ----------------------
@@ -167,6 +136,7 @@ let picturesCurrentlyBeingDisplayed;
 let sortingOrder;
 //* ----------------------
 //* global variables above
+
 
 // function to fetch the .json file and create gallery items from an array of pictures in it
 async function fetchAndCreate() {
