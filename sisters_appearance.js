@@ -21,26 +21,20 @@ function hideMenu() {
     closeMenuButton.style.display = "none"; // hides X
 }
 
-// todo fix this below
-// function to prevent "click" when "touch" event is detected
-function preventClick() {
-    console.log("click")        
-}
-
 // function to show the menu with a touch
-function showMenuWithTouch() {
-    preventClick();
+function showMenuWithTouch(touch) {
+    touch.preventDefault();
     showMenu();
 }
 
 // function to hide the menu with a touch
-function hideMenuWithTouch() {
-    preventClick();
+function hideMenuWithTouch(touch) {
+    touch.preventDefault();
     hideMenu();
 }
 
 // function to hide the menu once the mouse pointer leaves the menu area
- function hideMenuOnLeave(event) {
+ function hideMenuOnLeave() {
     let closeMenuButtonDisplay = window.getComputedStyle(closeMenuButton).display;
     if (closeMenuButtonDisplay === "block") {
         timeoutId = setTimeout(hideMenu, 500);
@@ -149,14 +143,14 @@ function hideFilter() {
 }
 
 // function to show the filter when triangle is touched 
-function showFilterWithTouch() {
-    preventClick();
-    showFilter;
+function showFilterWithTouch(touch) {
+    touch.preventDefault();
+    showFilter();
 }
 
 // function to hide the filter when X is touched
-function hideFilterWithTouch() {
-    preventClick();
+function hideFilterWithTouch(touch) {
+    touch.preventDefault();
     hideFilter();
 }
 
@@ -218,14 +212,14 @@ function hideSorting() {
 }
 
 // function to show sorting when arrow icon is touched
-function showSortingWithTouch() {
-    preventClick();
+function showSortingWithTouch(touch) {
+    touch.preventDefault();
     showSorting();
 }
 
 // function to hide sorting when X is touched
-function hideSortingWithTouch() {
-    preventClick();
+function hideSortingWithTouch(touch) {
+    touch.preventDefault();
     hideSorting();
 } 
 
@@ -288,14 +282,14 @@ function hideSearch() {
 }
 
 // function to show the search once the magnifying glass is touched 
-function showSearchWithTouch() {
-    preventClick();
+function showSearchWithTouch(touch) {
+    touch.preventDefault();
     showSearch();
 }
 
 // function to hide the search once X is touched
-function hideSearchWithTouch() {
-    preventClick();
+function hideSearchWithTouch(touch) {
+    touch.preventDefault();
     hideSearch();
 }
 

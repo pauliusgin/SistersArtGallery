@@ -2,6 +2,30 @@
     {
         "authorEN": "Viltaute",
         "authorLT": "Viltautė",
+        "titleEN": "Hot Air Balloons",
+        "titleLT": "Oro Balionai",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "felt-tip pen",
+        "methodLT": "flomasteriai",
+        "url": "gallery items/Gallery items drawings/2023-11-08-viltaute-oro-balionai-web.jpg",
+        "date": "2023-11-08"
+    },
+    {
+        "authorEN": "Jogaile",
+        "authorLT": "Jogailė",
+        "titleEN": "Flower Bouquet",
+        "titleLT": "Gėlių Puokštė",
+        "typeEN": "drawing",
+        "typeLT": "piešinys",
+        "methodEN": "watercolor",
+        "methodLT": "akvarelė",
+        "url": "gallery items/Gallery items drawings/2023-11-09-jogaile-geliu-puokste-web.jpg",
+        "date": "2023-11-09"
+    },
+    {
+        "authorEN": "Viltaute",
+        "authorLT": "Viltautė",
         "titleEN": "Rainbow",
         "titleLT": "Vaivorykštė",
         "typeEN": "drawing",
