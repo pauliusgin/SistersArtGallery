@@ -582,6 +582,10 @@ align-items: center;
         .sort-options {
           left: -45px;
         }
+
+        .search-field  {
+          left: -45px;
+        }
 }
 
 @media (max-width: 700px) {
