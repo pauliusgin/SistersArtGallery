@@ -5,27 +5,28 @@ const languageButtonLT = document.getElementById('LT-flag');
 const languageButtonEN = document.getElementById('EN-flag');
 
 function switchLanguage(lang) {
-    const language = document.querySelectorAll("[data-language]");
-    language.forEach(element => {
-        if (element.getAttribute("data-language") === lang) {
-            element.style.display = "block";
-        } else {
-            element.style.display = "none";
-        }
-    });
-    createLanguageCookie(lang, 100)
+  const language = document.querySelectorAll("[data-language]");
+  language.forEach((element) => {
+    if (element.getAttribute("data-language") === lang) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  });
+  createLanguageCookie(lang, 100);
 }
 
 languageButtonLT.addEventListener("click", () => switchLanguage("lt"));
 languageButtonEN.addEventListener("click", () => switchLanguage("en"));
 
 // determining language when loading gallery images
-const mutationObserver = new MutationObserver( () => {
-    const lithuanianLanguageSelected = window.getComputedStyle(languageButtonEN).display;
-        if (lithuanianLanguageSelected === "block") {
-            switchLanguage("lt");
-    }
-})
+const mutationObserver = new MutationObserver(() => {
+  const lithuanianLanguageSelected =
+    window.getComputedStyle(languageButtonEN).display;
+  if (lithuanianLanguageSelected === "block") {
+    switchLanguage("lt");
+  }
+});
 
 const theGallery = document.getElementById("div-gallery-items");
 mutationObserver.observe(theGallery, {childList: true})
@@ -35,27 +36,33 @@ mutationObserver.observe(theGallery, {childList: true})
 
 // function to create a cookie to remember a selected language
 function createLanguageCookie(lang, daysToLive) {
-    let currentLanguageCookie = document.cookie
-        .split('; ')
-        .find(cookie => cookie.startsWith('language='));
+  let currentLanguageCookie = document.cookie
+    .split("; ")
+    .find((cookie) => cookie.startsWith("language="));
 
-    if (currentLanguageCookie) {
-        document.cookie = `${currentLanguageCookie}; expires=${new Date(0).toUTCString()}; path=/`;
-    }
+  if (currentLanguageCookie) {
+    document.cookie = `${currentLanguageCookie}; 
+      expires=${new Date(0).toUTCString()}; 
+      path=/`;
+  }
 
-    let currentDateInMs = new Date().getTime();
-    let expDateInMs = daysToLive * 24 * 3600 * 1000;
-    let expDate = new Date(currentDateInMs + expDateInMs).toUTCString();
-    document.cookie = `language=${lang}; expires=${expDate}; path=/ `
+  let currentDateInMs = new Date().getTime();
+  let expDateInMs = daysToLive * 24 * 3600 * 1000;
+  let expDate = new Date(currentDateInMs + expDateInMs).toUTCString();
+  document.cookie = `language=${lang}; 
+    expires=${expDate}; 
+    path=/ `;
 }
 
 // function to check for the cookie value on page load
 function checkLanguageCookie() {
-    let languageCookie = document.cookie.split(";").find(cookie => cookie.startsWith("language="));
-    let languageCookieValue = languageCookie.replace("language=", "");
-    if (languageCookieValue === "lt") {
-        switchLanguage("lt")
-    }
+  let languageCookie = document.cookie
+    .split(";")
+    .find((cookie) => cookie.startsWith("language="));
+  let languageCookieValue = languageCookie.replace("language=", "");
+  if (languageCookieValue === "lt") {
+    switchLanguage("lt");
+  }
 }
 document.addEventListener("DOMContentLoaded", checkLanguageCookie);
 
