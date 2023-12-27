@@ -384,3 +384,23 @@ function galleryControlsOnScreenResize() {
 // tracks window size in real time and adjusts 
 window.addEventListener("resize", galleryControlsOnScreenResize);
 galleryControlsOnScreenResize();
+
+
+//* changing the address bar url
+
+let welcomeLink = document.querySelector(".welcome-link");
+let welcomeSection = document.getElementById("welcome-section");
+
+function scrollTo(element) {
+  element.scrollIntoView();
+}
+
+function addressBar(path) {
+  history.replaceState("", "", path);
+}
+
+welcomeLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    scrollTo(welcomeSection);
+    addressBar("/welcome")
+  });
